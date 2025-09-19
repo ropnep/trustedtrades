@@ -619,46 +619,54 @@
 
         let filteredTradies = [...tradiesData];
 
-        function renderTradies(tradies) {
-            const grid = document.getElementById('tradiesGrid');
-            grid.innerHTML = '';
+        // Find this function in index.html and replace it:
+function renderTradies(tradies) {
+    const grid = document.getElementById('tradiesGrid');
+    grid.innerHTML = '';
 
-            tradies.forEach(tradie => {
-                const card = document.createElement('div');
-                card.className = 'tradie-card';
-                
-                const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
-                
-                card.innerHTML = `
-                    <div class="tradie-header">
-                        <div>
-                            <div class="tradie-name">${tradie.name}</div>
-                            ${tradie.ownerRecommended ? '<span class="owner-recommended">🏆 Owner Recommended</span>' : ''}
-                        </div>
-                        <div class="license-badge ${tradie.licensed ? '' : 'unlicensed'}">
-                            ${tradie.licensed ? '✓ Licensed' : 'Unlicensed'}
-                        </div>
-                    </div>
-                    
-                    <div class="rating">
-                        ${stars} (${tradie.reviewCount} reviews)
-                    </div>
-                    
-                    <div class="tradie-details">
-                        <p><strong>Specialties:</strong> ${tradie.specialties.join(', ')}</p>
-                        <p><strong>Service Areas:</strong> ${tradie.areas.join(', ')}</p>
-                        ${tradie.licensed ? `<p><strong>License:</strong> ${tradie.licenseNumber}</p>` : ''}
-                        <p>${tradie.description}</p>
-                    </div>
-                    
-                    <button class="contact-btn" onclick="showContact(${tradie.id})">
-                        📞 Contact ${tradie.name.split(' ')[0]}
-                    </button>
-                `;
-                
-                grid.appendChild(card);
-            });
-        }
+    tradies.forEach(tradie => {
+        const card = document.createElement('div');
+        card.className = 'tradie-card';
+        
+        const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
+        
+        // Use the actual property names from your data
+        const name = tradie.business_name || tradie.name || 'Unknown Business';
+        const category = tradie.trade_type || tradie.category || 'general';
+        const phone = tradie.phone || 'Contact via website';
+        const address = tradie.address || '';
+        const areas = address ? [address.split(',')[1]?.trim() || 'Perth Metro'] : ['Perth Metro'];
+        
+        card.innerHTML = `
+            <div class="tradie-header">
+                <div>
+                    <div class="tradie-name">${name}</div>
+                    ${tradie.ownerRecommended ? '<span class="owner-recommended">🏆 Owner Recommended</span>' : ''}
+                </div>
+                <div class="license-badge ${tradie.licensed ? '' : 'unlicensed'}">
+                    ${tradie.licensed ? '✓ Licensed' : 'Unlicensed'}
+                </div>
+            </div>
+            
+            <div class="rating">
+                ${stars} (${tradie.review_count || tradie.reviewCount || 0} reviews)
+            </div>
+            
+            <div class="tradie-details">
+                <p><strong>Service Type:</strong> ${category}</p>
+                <p><strong>Service Areas:</strong> ${areas.join(', ')}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+            </div>
+            
+            <button class="contact-btn" onclick="showContact(${tradie.google_place_id})">
+                📞 Contact ${name.split(' ')[0]}
+            </button>
+        `;
+        
+        grid.appendChild(card);
+    });
+}
 
         function searchTradies() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
