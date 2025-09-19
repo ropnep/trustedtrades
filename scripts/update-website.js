@@ -86,23 +86,25 @@ class WebsiteUpdater {
     }
 
     generateDescription(tradie) {
-        const type = tradie.trade_type.replace('_', ' ');
-        const licensed = tradie.license_verified ? 'Licensed' : 'General';
-        
-        return `${licensed} ${type} providing professional services in Perth.`;
+    const type = (tradie.trade_type || 'service provider').replace('_', ' ');
+    const licensed = tradie.license_verified ? 'Licensed' : 'General';
+    
+    return `${licensed} ${type} providing professional services in Perth.`;
     }
 
     removeDuplicates(tradies) {
-        const seen = new Set();
-        return tradies.filter(tradie => {
-            const key = `${tradie.name.toLowerCase()}_${tradie.phone}`;
-            if (seen.has(key)) {
-                return false;
-            }
-            seen.add(key);
-            return true;
-        });
-    }
+    const seen = new Set();
+    return tradies.filter(tradie => {
+        const name = tradie.name || tradie.business_name || 'Unknown';
+        const phone = tradie.phone || 'No phone';
+        const key = `${name.toLowerCase()}_${phone}`;
+        if (seen.has(key)) {
+            return false;
+        }
+        seen.add(key);
+        return true;
+    });
+}
 
     updateHTML() {
         // Update the main HTML file with new data
