@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2025-09-19T06:32:26.205Z",
+  "lastUpdated": "2025-09-19T06:58:50.259Z",
   "totalTradies": 21,
   "licensedCount": 21,
   "tradies": [
@@ -8,441 +8,441 @@
       "name": "Response Electricians",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": "EC17045",
       "rating": 4.9,
-      "reviewCount": 1944,
+      "reviewCount": 0,
       "phone": "(08) 9106 9197",
       "areas": [
-        "Perth WA 6000"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.188Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 2,
       "name": "Westline Electricians Perth",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": "EC15892",
       "rating": 5,
-      "reviewCount": 485,
+      "reviewCount": 0,
       "phone": "(08) 9118 3110",
       "areas": [
-        "Perth WA 6000"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.188Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 3,
       "name": "Brillare Perth Electricians",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": "EC16334",
       "rating": 5,
-      "reviewCount": 479,
+      "reviewCount": 0,
       "phone": "(08) 9415 0762",
       "areas": [
-        "Perth WA 6000"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 4,
       "name": "Mactec Electrical",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": "EC14567",
       "rating": 5,
-      "reviewCount": 1005,
+      "reviewCount": 0,
       "phone": "(08) 6169 1679",
       "areas": [
-        "Gnangara WA 6077"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 5,
       "name": "Dr Sparky Electrical",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": "EC18901",
       "rating": 4.9,
-      "reviewCount": 173,
+      "reviewCount": 0,
       "phone": "0409 344 154",
       "areas": [
-        "Osborne Park WA 6017"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 6,
       "name": "O'Brien Plumbing Perth",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": "PL98891",
       "rating": 4.9,
-      "reviewCount": 359,
+      "reviewCount": 0,
       "phone": "(08) 9200 6654",
       "areas": [
-        "Perth WA 6000"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 7,
       "name": "G.X.R Plumbing",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": "PL28183",
       "rating": 4.9,
-      "reviewCount": 387,
+      "reviewCount": 0,
       "phone": "0437 800 192",
       "areas": [
-        "Perth WA 6000"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 8,
       "name": "Plumbdog",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 4.4,
-      "reviewCount": 868,
+      "reviewCount": 0,
       "phone": "1300 127 454",
       "areas": [
-        "Perth WA 6000"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 9,
       "name": "Tap Doctor Plumbing Perth",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": "PL92268",
       "rating": 4.5,
-      "reviewCount": 1193,
+      "reviewCount": 0,
       "phone": "(08) 6202 9332",
       "areas": [
-        "West Perth WA 6005"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
       "id": 10,
       "name": "No Probs Plumbing",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": "PL96045",
       "rating": 4.9,
-      "reviewCount": 682,
+      "reviewCount": 0,
       "phone": "(08) 9315 5545",
       "areas": [
-        "Osborne Park WA 6017"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 12,
+      "id": 11,
       "name": "Tap Tech Plumbing and Gas",
       "category": "gas_fitter",
       "licensed": true,
-      "licenseNumber": "PL66792",
       "rating": 5,
-      "reviewCount": 46,
+      "reviewCount": 0,
       "phone": "0493 085 350",
       "areas": [
-        "East Victoria Park WA 6101"
+        "Perth Metro"
       ],
       "specialties": [
         "Gas installations",
         "Gas repairs",
         "Safety inspections"
       ],
-      "description": "Licensed gas fitter providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 13,
+      "id": 12,
       "name": "Splash and Gas Plumbing and Gas Fitting Specialists",
       "category": "gas_fitter",
       "licensed": true,
-      "licenseNumber": "PL53762",
       "rating": 4.9,
-      "reviewCount": 264,
+      "reviewCount": 0,
       "phone": "0410 217 090",
       "areas": [
-        "Success WA 6164"
+        "Perth Metro"
       ],
       "specialties": [
         "Gas installations",
         "Gas repairs",
         "Safety inspections"
       ],
-      "description": "Licensed gas fitter providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 14,
+      "id": 13,
       "name": "VH Plumb & Gas",
       "category": "gas_fitter",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 4.9,
-      "reviewCount": 85,
+      "reviewCount": 0,
       "phone": "0476 049 559",
       "areas": [
-        "Thornlie WA 6108"
+        "Perth Metro"
       ],
       "specialties": [
         "Gas installations",
         "Gas repairs",
         "Safety inspections"
       ],
-      "description": "Licensed gas fitter providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 15,
+      "id": 14,
       "name": "Under Pressure Plumbing and Gas",
       "category": "gas_fitter",
       "licensed": true,
-      "licenseNumber": "PL36250",
       "rating": 5,
-      "reviewCount": 104,
+      "reviewCount": 0,
       "phone": "0422 379 406",
       "areas": [
-        "East Perth WA 6004"
+        "Perth Metro"
       ],
       "specialties": [
         "Gas installations",
         "Gas repairs",
         "Safety inspections"
       ],
-      "description": "Licensed gas fitter providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 16,
+      "id": 15,
       "name": "AMY Electrical",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": "EC67764",
       "rating": 4.9,
-      "reviewCount": 32,
+      "reviewCount": 0,
       "phone": "0437 930 349",
       "areas": [
-        "Fremantle WA 6160"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 17,
+      "id": 16,
       "name": "Crown Electrical Service WA",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 5,
-      "reviewCount": 42,
+      "reviewCount": 0,
       "phone": "0416 740 668",
       "areas": [
-        "Bicton WA 6157"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 18,
+      "id": 17,
       "name": "Delavale Electrical Contracting",
       "category": "electrician",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 5,
-      "reviewCount": 360,
+      "reviewCount": 0,
       "phone": "0408 900 293",
       "areas": [
-        "O'Connor WA 6163"
+        "Perth Metro"
       ],
       "specialties": [
         "General electrical",
         "Repairs",
         "Installations"
       ],
-      "description": "Licensed electrician providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 19,
+      "id": 18,
       "name": "Youngs Plumbing & Gas",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 4.9,
-      "reviewCount": 228,
+      "reviewCount": 0,
       "phone": "(08) 9335 2076",
       "areas": [
-        "North Fremantle WA 6159"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 20,
+      "id": 19,
       "name": "General Plumbing Co",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 4.9,
-      "reviewCount": 341,
+      "reviewCount": 0,
       "phone": "(08) 6191 2555",
       "areas": [
-        "Bibra Lake WA 6163"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 21,
+      "id": 20,
       "name": "Fremantle Plumbing Service",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": null,
       "rating": 4.6,
-      "reviewCount": 44,
+      "reviewCount": 0,
       "phone": "(08) 9337 1414",
       "areas": [
-        "O'Connor WA 6163"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     },
     {
-      "id": 22,
+      "id": 21,
       "name": "Urban Hot Water, Plumbing and Gas",
       "category": "plumber",
       "licensed": true,
-      "licenseNumber": "PL77964",
       "rating": 4.9,
-      "reviewCount": 54,
+      "reviewCount": 0,
       "phone": "0403 902 820",
       "areas": [
-        "East Fremantle WA 6158"
+        "Perth Metro"
       ],
       "specialties": [
         "General plumbing",
         "Repairs",
         "Maintenance"
       ],
-      "description": "Licensed plumber providing professional services in Perth.",
+      "description": "General service provider providing professional services in Perth.",
       "ownerRecommended": false,
-      "lastUpdated": "2025-09-19T06:32:26.189Z"
+      "address": "Perth Metro",
+      "lastUpdated": "2025-09-19T06:58:50.232Z"
     }
   ]
 }

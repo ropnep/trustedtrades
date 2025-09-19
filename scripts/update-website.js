@@ -54,6 +54,7 @@ class WebsiteUpdater {
         specialties: this.generateSpecialties(tradie.trade_type || tradie.category),
         description: this.generateDescription(tradie),
         ownerRecommended: tradie.ownerRecommended || false,
+        address: tradie.address || tradie.formattedAddress || 'Perth Metro', // Preserve full address
         lastUpdated: new Date().toISOString()
     }));
 
