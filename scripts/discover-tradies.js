@@ -6,13 +6,22 @@ const { URL } = require('url');
 // CONFIGURATION - ADJUST THESE TO LIMIT API CALLS
 const CONFIG = {
     // Limit total API calls
-    MAX_API_CALLS: 20,  // Set your limit here (20 = safe test)
+    MAX_API_CALLS: 100,  // Set your limit here (100 = safe test)
     
     // Reduce suburbs (fewer suburbs = fewer calls)
     TEST_SUBURBS: [
         'Perth WA',      // Just test 2-3 suburbs first
         'Fremantle WA',
-        'Joondalup WA'  // Comment out to reduce calls
+        'Joondalup WA',  // Comment out to reduce calls
+        'Canning Vale WA',
+        'Rockingham WA',     // Comment out to reduce calls
+        'Armadale WA',  // Comment out to reduce calls
+        'Mandurah WA',   // Comment out to reduce calls 
+        'Ballajura WA',
+        'Darch WA',
+        'Wanneroo WA',
+        'Morley WA'  // Comment out to reduce calls
+
     ],
     
     // Reduce trade types
