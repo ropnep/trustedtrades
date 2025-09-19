@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perth Trades Hub - Find Trusted Local Tradies</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .search-btn {
+            padding: 15px 30px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .search-btn:hover {
+            background: #c0392b;
+        }
+
+        .filter-toggle {
+            margin-top: 15px;
+        }
+
+        .filter-toggle input {
+            margin-right: 8px;
+        }
+
+        /* Trade Categories */
+        .categories {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .categories h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .category-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        /* Tradies Grid */
+        .tradies-section {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+
+        .tradies-section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .tradies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .tradie-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .tradie-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .tradie-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .tradie-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .license-badge {
+            background: #27ae60;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .license-badge.unlicensed {
+            background: #f39c12;
+        }
+
+        .owner-recommended {
+            background: #e74c3c;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+            display: inline-block;
+        }
+
+        .rating {
+            color: #f39c12;
+            margin: 10px 0;
+        }
+
+        .tradie-details {
+            margin: 15px 0;
+        }
+
+        .tradie-details p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+        }
+
+        .contact-btn {
+            width: 100%;
+            padding: 10px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #2980b9;
+        }
+
+        /* Owner Recommendations Section */
+        .owner-recommendations {
+            padding: 60px 0;
+            background: white;
+        }
+
+        .owner-recommendations h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .owner-recommendations .subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+
+        .recommendation-card {
+            background: #f8f9fa;
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .recommendation-text {
+            font-style: italic;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        .recommendation-author {
+            text-align: right;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+            }
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 15px;
+        }
+
+        .close:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">🔧 Perth Trades Hub</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#recommendations">Our Picks</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Find Trusted Perth Tradies</h1>
+            <p>Licensed professionals verified by locals, for locals</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
+                <button class="search-btn" onclick="searchTradies()">Search</button>
+            </div>
+            <div class="filter-toggle">
+                <label>
+                    <input type="checkbox" id="licensedOnly"> Show licensed tradies only
+                </label>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Trade Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterByCategory('electrician')">
+                    <div class="category-icon">⚡</div>
+                    <h3>Electricians</h3>
+                    <p>Licensed electrical professionals for all your power needs</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('plumber')">
+                    <div class="category-icon">🔧</div>
+                    <h3>Plumbers</h3>
+                    <p>Licensed plumbing experts for repairs and installations</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('gas')">
+                    <div class="category-icon">🔥</div>
+                    <h3>Gas Fitters</h3>
+                    <p>Licensed gas professionals for safe installations</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('handyman')">
+                    <div class="category-icon">🔨</div>
+                    <h3>General Handymen</h3>
+                    <p>Reliable handymen for general repairs and maintenance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tradies Listing -->
+    <section class="tradies-section">
+        <div class="container">
+            <h2>Featured Tradies</h2>
+            <div class="tradies-grid" id="tradiesGrid">
+                <!-- Tradies will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Recommendations -->
+    <section class="owner-recommendations" id="recommendations">
+        <div class="container">
+            <h2>Our Personal Recommendations</h2>
+            <p class="subtitle">Tradies we've personally used and trust</p>
+            
+            <div class="recommendation-card">
+                <div class="recommendation-text">
+                    "We've used Steve's Electrical for three different jobs over the past two years. Always on time, fair pricing, and excellent quality work. He rewired our kitchen and installed new outdoor lighting - both jobs were completed faster than quoted and he cleaned up perfectly after each visit."
+                </div>
+                <div class="recommendation-author">- Perth Trades Hub Owner</div>
+            </div>
+
+            <div class="recommendation-card">
+                <div class="recommendation-text">
+                    "After being let down by two other plumbers, we found Pete's Plumbing through a neighbor's recommendation. Pete fixed our blocked drain issue that others couldn't solve and did emergency repairs during the weekend without charging excessive call-out fees. Definitely our go-to plumber now."
+                </div>
+                <div class="recommendation-author">- Perth Trades Hub Owner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Perth Trades Hub. Connecting Perth residents with trusted local tradies.</p>
+            <p>Verify all licenses through WA Building and Energy before hiring.</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Contact Tradie</h2>
+            <div id="contactDetails">
+                <!-- Contact details will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Sample tradie data - in a real application, this would come from a database
+        const tradiesData = [
+            {
+                id: 1,
+                name: "Steve's Electrical Services",
+                category: "electrician",
+                licensed: true,
+                licenseNumber: "EC12345",
+                rating: 4.8,
+                reviewCount: 23,
+                phone: "0412 345 678",
+                website: "www.steveselectrical.com.au",
+                areas: ["North Perth", "Subiaco", "West Perth"],
+                specialties: ["Residential rewiring", "Solar installations", "Emergency repairs"],
+                description: "Licensed electrician with 15 years experience. Specializing in residential electrical work.",
+                ownerRecommended: true
+            },
+            {
+                id: 2,
+                name: "Pete's Plumbing Solutions",
+                category: "plumber",
+                licensed: true,
+                licenseNumber: "PL67890",
+                rating: 4.9,
+                reviewCount: 31,
+                phone: "0423 456 789",
+                website: "www.petesplumbing.com.au",
+                areas: ["Fremantle", "South Perth", "Applecross"],
+                specialties: ["Blocked drains", "Hot water systems", "Bathroom renovations"],
+                description: "Fully licensed plumber serving Perth metro. 24/7 emergency service available.",
+                ownerRecommended: true
+            },
+            {
+                id: 3,
+                name: "Metro Gas Installations",
+                category: "gas",
+                licensed: true,
+                licenseNumber: "GF13579",
+                rating: 4.7,
+                reviewCount: 18,
+                phone: "0434 567 890",
+                website: "www.metrogas.com.au",
+                areas: ["Joondalup", "Wanneroo", "Stirling"],
+                specialties: ["Gas appliance installation", "Gas line repairs", "Safety inspections"],
+                description: "Licensed gas fitter specializing in residential and commercial gas work.",
+                ownerRecommended: false
+            },
+            {
+                id: 4,
+                name: "Handy Andy Services",
+                category: "handyman",
+                licensed: false,
+                licenseNumber: null,
+                rating: 4.5,
+                reviewCount: 12,
+                phone: "0445 678 901",
+                website: null,
+                areas: ["Midland", "Kalamunda", "Forrestfield"],
+                specialties: ["General repairs", "Furniture assembly", "Painting"],
+                description: "Reliable handyman for general household repairs and maintenance.",
+                ownerRecommended: false
+            },
+            {
+                id: 5,
+                name: "Bright Spark Electrical",
+                category: "electrician",
+                licensed: true,
+                licenseNumber: "EC24681",
+                rating: 4.6,
+                reviewCount: 29,
+                phone: "0456 789 012",
+                website: "www.brightspark.com.au",
+                areas: ["Rockingham", "Mandurah", "Baldivis"],
+                specialties: ["LED upgrades", "Switchboard upgrades", "Pool electrical"],
+                description: "Modern electrical solutions for homes and businesses. Energy-efficient focus.",
+                ownerRecommended: false
+            },
+            {
+                id: 6,
+                name: "Perth Plumbing Pros",
+                category: "plumber",
+                licensed: true,
+                licenseNumber: "PL98765",
+                rating: 4.4,
+                reviewCount: 15,
+                phone: "0467 890 123",
+                website: "www.perthplumbingpros.com.au",
+                areas: ["Armadale", "Gosnells", "Cannington"],
+                specialties: ["Leak detection", "Pipe relining", "Gas hot water"],
+                description: "Professional plumbing services with modern leak detection technology.",
+                ownerRecommended: false
+            }
+        ];
+
+        let filteredTradies = [...tradiesData];
+
+        function renderTradies(tradies) {
+            const grid = document.getElementById('tradiesGrid');
+            grid.innerHTML = '';
+
+            tradies.forEach(tradie => {
+                const card = document.createElement('div');
+                card.className = 'tradie-card';
+                
+                const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
+                
+                card.innerHTML = `
+                    <div class="tradie-header">
+                        <div>
+                            <div class="tradie-name">${tradie.name}</div>
+                            ${tradie.ownerRecommended ? '<span class="owner-recommended">🏆 Owner Recommended</span>' : ''}
+                        </div>
+                        <div class="license-badge ${tradie.licensed ? '' : 'unlicensed'}">
+                            ${tradie.licensed ? '✓ Licensed' : 'Unlicensed'}
+                        </div>
+                    </div>
+                    
+                    <div class="rating">
+                        ${stars} (${tradie.reviewCount} reviews)
+                    </div>
+                    
+                    <div class="tradie-details">
+                        <p><strong>Specialties:</strong> ${tradie.specialties.join(', ')}</p>
+                        <p><strong>Service Areas:</strong> ${tradie.areas.join(', ')}</p>
+                        ${tradie.licensed ? `<p><strong>License:</strong> ${tradie.licenseNumber}</p>` : ''}
+                        <p>${tradie.description}</p>
+                    </div>
+                    
+                    <button class="contact-btn" onclick="showContact(${tradie.id})">
+                        📞 Contact ${tradie.name.split(' ')[0]}
+                    </button>
+                `;
+                
+                grid.appendChild(card);
+            });
+        }
+
+        function searchTradies() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const licensedOnly = document.getElementById('licensedOnly').checked;
+            
+            filteredTradies = tradiesData.filter(tradie => {
+                const matchesSearch = tradie.name.toLowerCase().includes(searchTerm) ||
+                                    tradie.specialties.some(s => s.toLowerCase().includes(searchTerm)) ||
+                                    tradie.areas.some(a => a.toLowerCase().includes(searchTerm)) ||
+                                    tradie.category.toLowerCase().includes(searchTerm);
+                
+                const matchesLicense = !licensedOnly || tradie.licensed;
+                
+                return matchesSearch && matchesLicense;
+            });
+            
+            renderTradies(filteredTradies);
+        }
+
+        function filterByCategory(category) {
+            const licensedOnly = document.getElementById('licensedOnly').checked;
+            
+            filteredTradies = tradiesData.filter(tradie => {
+                const matchesCategory = tradie.category === category;
+                const matchesLicense = !licensedOnly || tradie.licensed;
+                return matchesCategory && matchesLicense;
+            });
+            
+            renderTradies(filteredTradies);
+            
+            // Scroll to tradies section
+            document.querySelector('.tradies-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function showContact(tradieId) {
+            const tradie = tradiesData.find(t => t.id === tradieId);
+            const modal = document.getElementById('contactModal');
+            const details = document.getElementById('contactDetails');
+            
+            details.innerHTML = `
+                <h3>${tradie.name}</h3>
+                <p><strong>📞 Phone:</strong> <a href="tel:${tradie.phone}">${tradie.phone}</a></p>
+                ${tradie.website ? `<p><strong>🌐 Website:</strong> <a href="http://${tradie.website}" target="_blank">${tradie.website}</a></p>` : ''}
+                ${tradie.licensed ? `<p><strong>📋 License:</strong> ${tradie.licenseNumber}</p>` : ''}
+                <p><strong>📍 Service Areas:</strong> ${tradie.areas.join(', ')}</p>
+                <p><strong>⭐ Rating:</strong> ${tradie.rating}/5 (${tradie.reviewCount} reviews)</p>
+                <br>
+                <p><em>Always verify license status with WA Building and Energy before hiring.</em></p>
+            `;
+            
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                searchTradies();
+            }
+        });
+
+        document.getElementById('licensedOnly').addEventListener('change', searchTradies);
+
+        // Initial render
+        renderTradies(tradiesData);
+    </script>
+</body>
+</html>
