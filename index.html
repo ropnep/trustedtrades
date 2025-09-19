@@ -386,9 +386,12 @@
             <h1>Find Trusted Perth Tradies</h1>
             <p>Licensed professionals verified by locals, for locals</p>
             <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
-                <button class="search-btn" onclick="searchTradies()">Search</button>
-            </div>
+        <select class="search-input" id="suburbSelect">
+        <option value="">All Perth Areas</option>
+        <!-- Options will be populated by JavaScript -->
+        </select>
+    <button class="search-btn" onclick="searchBySuburb()">Filter</button>
+</div>
             <div class="filter-toggle">
                 <label>
                     <input type="checkbox" id="licensedOnly"> Show licensed tradies only
@@ -2742,6 +2745,60 @@ function visitWebsite(url) {
 
         // Initial render
         renderTradies(tradiesData);
+
+        function populateSuburbDropdown() {
+    const suburbSelect = document.getElementById('suburbSelect');
+    
+    // Extract all unique suburbs from tradie data
+    const allSuburbs = new Set();
+    
+    tradiesData.forEach(tradie => {
+        if (tradie.areas && Array.isArray(tradie.areas)) {
+            tradie.areas.forEach(area => {
+                // Clean up the area name (remove "WA", numbers, etc.)
+                const cleanArea = area.replace(/\s*WA\s*\d*/, '').trim();
+                if (cleanArea && cleanArea !== 'Perth Metro') {
+                    allSuburbs.add(cleanArea);
+                }
+            });
+        }
+    });
+    
+    // Sort suburbs alphabetically
+    const sortedSuburbs = Array.from(allSuburbs).sort();
+    
+    // Clear existing options (except "All Perth Areas")
+    suburbSelect.innerHTML = '<option value="">All Perth Areas</option>';
+    
+    // Add dynamic options
+    sortedSuburbs.forEach(suburb => {
+        const option = document.createElement('option');
+        option.value = suburb.toLowerCase();
+        option.textContent = suburb;
+        suburbSelect.appendChild(option);
+    });
+}
+
+function initializePage() {
+    renderTradies(tradiesData);
+    populateSuburbDropdown();
+}
+
+function searchBySuburb() {
+    const selectedSuburb = document.getElementById('suburbSelect').value.toLowerCase();
+    const licensedOnly = document.getElementById('licensedOnly').checked;
+    
+    filteredTradies = tradiesData.filter(tradie => {
+        const matchesSuburb = !selectedSuburb || 
+            tradie.areas.some(area => area.toLowerCase().includes(selectedSuburb));
+        const matchesLicense = !licensedOnly || tradie.licensed;
+        
+        return matchesSuburb && matchesLicense;
+    });
+    
+    // Initial render with dynamic suburbs
+initializePage();
+}
     </script>
 </body>
 </html>
