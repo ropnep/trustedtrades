@@ -39,29 +39,29 @@ class WebsiteUpdater {
 }
 
     processData() {
-        // Clean and standardize data
-        this.tradiesData = this.tradiesData.map((tradie, index) => ({
-            id: index + 1,
-            name: tradie.business_name,
-            category: tradie.trade_type,
-            licensed: tradie.license_verified || false,
-            licenseNumber: tradie.license_number,
-            rating: tradie.rating || 4.0,
-            reviewCount: tradie.review_count || 0,
-            phone: tradie.phone || 'Contact via website',
-            website: tradie.website,
-            areas: this.extractAreas(tradie.address),
-            specialties: this.generateSpecialties(tradie.trade_type),
-            description: this.generateDescription(tradie),
-            ownerRecommended: false, // Manual review required
-            lastUpdated: new Date().toISOString()
-        }));
+    // Clean and standardize data
+    this.tradiesData = this.tradiesData.map((tradie, index) => ({
+        id: index + 1,
+        name: tradie.business_name || tradie.name || 'Unknown Business',
+        category: tradie.trade_type || tradie.category || 'general',
+        licensed: tradie.licensed || tradie.license_verified || false,
+        licenseNumber: tradie.license_number,
+        rating: tradie.rating || 4.0,
+        reviewCount: tradie.review_count || tradie.userRatingCount || 0,
+        phone: tradie.phone || tradie.nationalPhoneNumber || 'Contact via website',
+        website: tradie.website || tradie.websiteUri,
+        areas: this.extractAreas(tradie.address || tradie.formattedAddress),
+        specialties: this.generateSpecialties(tradie.trade_type || tradie.category),
+        description: this.generateDescription(tradie),
+        ownerRecommended: tradie.ownerRecommended || false,
+        lastUpdated: new Date().toISOString()
+    }));
 
-        // Remove duplicates based on business name and phone
-        this.tradiesData = this.removeDuplicates(this.tradiesData);
-        
-        console.log(`🧹 Processed data: ${this.tradiesData.length} unique tradies`);
-    }
+    // Remove duplicates based on business name and phone
+    this.tradiesData = this.removeDuplicates(this.tradiesData);
+    
+    console.log(`🧹 Processed data: ${this.tradiesData.length} unique tradies`);
+}
 
     extractAreas(address) {
         if (!address) return ['Perth Metro'];

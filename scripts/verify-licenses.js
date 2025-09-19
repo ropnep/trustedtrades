@@ -59,6 +59,7 @@ class WALicenseVerifier {
             const licenseInfo = await this.searchWALicense(searchTerm, tradeType);
             
             if (licenseInfo && licenseInfo.found) {
+                // ONLY update license fields - preserve original business data
                 tradie.license_verified = true;
                 tradie.licensed = true;
                 tradie.license_number = licenseInfo.license_number;
@@ -74,7 +75,7 @@ class WALicenseVerifier {
             }
         }
         
-        // No license found
+        // No license found - ONLY update license fields
         tradie.license_verified = true;
         tradie.licensed = false;
         tradie.license_number = null;
