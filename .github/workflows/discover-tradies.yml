@@ -1,0 +1,54 @@
+name: Discover and Update Perth Tradies
+
+on:
+  schedule:
+    # Run every Monday at 2 AM AWST
+    - cron: '0 18 * * 0'  # UTC time
+  workflow_dispatch: # Allow manual triggers
+
+env:
+  GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+  WA_LICENSE_API_KEY: ${{ secrets.WA_LICENSE_API_KEY }}
+
+jobs:
+  discover-tradies:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        cache: 'npm'
+        
+    - name: Install Dependencies
+      run: npm install
+      
+    - name: Run Tradie Discovery
+      run: node scripts/discover-tradies.js
+      
+    - name: Verify Licenses
+      run: node scripts/verify-licenses.js
+      
+    - name: Update Website Data
+      run: node scripts/update-website.js
+      
+    - name: Build Website
+      run: npm run build
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./dist
+        
+    - name: Commit Updated Data
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add data/
+        git commit -m "Auto-update tradie data $(date)" || exit 0
+        git push
