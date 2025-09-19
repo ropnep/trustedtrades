@@ -17,9 +17,9 @@ const CONFIG = {
     
     // Reduce trade types
     TEST_TRADES: [
-        { type: 'electrician', query: 'electrician' }
-        // { type: 'plumber', query: 'plumber' }  // Comment out to reduce calls
-        // { type: 'gas_fitter', query: 'gas fitter' }
+        { type: 'electrician', query: 'electrician' },
+        { type: 'plumber', query: 'plumber' },  // Comment out to reduce calls
+        { type: 'gas_fitter', query: 'gas fitter' }
     ],
     
     // Reduce results per search

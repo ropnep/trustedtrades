@@ -1,5 +1,5 @@
 {
-  "discovery_date": "2025-09-19T04:07:01.199Z",
+  "discovery_date": "2025-09-19T05:06:31.757Z",
   "config_used": {
     "MAX_API_CALLS": 10,
     "TEST_SUBURBS": [
@@ -10,14 +10,22 @@
       {
         "type": "electrician",
         "query": "electrician"
+      },
+      {
+        "type": "plumber",
+        "query": "plumber"
+      },
+      {
+        "type": "gas_fitter",
+        "query": "gas fitter"
       }
     ],
     "PAGE_SIZE": 5,
     "API_DELAY": 500
   },
-  "total_api_calls": 2,
+  "total_api_calls": 6,
   "max_calls_allowed": 10,
-  "businesses_found": 8,
+  "businesses_found": 27,
   "businesses": [
     {
       "google_place_id": "ChIJG9igLMqlMioRvD_24Cn2cpQ",
@@ -33,7 +41,7 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Perth WA",
-      "discovered_date": "2025-09-19T04:06:59.875Z"
+      "discovered_date": "2025-09-19T05:06:27.103Z"
     },
     {
       "google_place_id": "ChIJa61UQrGxMioR-Xrg-p1Jx3Q",
@@ -49,7 +57,7 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Perth WA",
-      "discovered_date": "2025-09-19T04:06:59.875Z"
+      "discovered_date": "2025-09-19T05:06:27.103Z"
     },
     {
       "google_place_id": "ChIJF_1MN667MioRVxbVv9h8Qm0",
@@ -68,7 +76,7 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Perth WA",
-      "discovered_date": "2025-09-19T04:06:59.875Z"
+      "discovered_date": "2025-09-19T05:06:27.103Z"
     },
     {
       "google_place_id": "ChIJd--lan6wMioRPCuqfEOwsMg",
@@ -85,7 +93,7 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Perth WA",
-      "discovered_date": "2025-09-19T04:06:59.875Z"
+      "discovered_date": "2025-09-19T05:06:27.103Z"
     },
     {
       "google_place_id": "ChIJC_WVSE6lMioRUSNu_pSKfbw",
@@ -103,7 +111,174 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Perth WA",
-      "discovered_date": "2025-09-19T04:06:59.875Z"
+      "discovered_date": "2025-09-19T05:06:27.103Z"
+    },
+    {
+      "google_place_id": "ChIJq4WWB6mVMioR-S9oEWhPI3E",
+      "business_name": "G.X.R Plumbing",
+      "address": "191 St Georges Terrace, Perth WA 6000, Australia",
+      "phone": "0437 800 192",
+      "rating": 4.9,
+      "review_count": 387,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:27.961Z"
+    },
+    {
+      "google_place_id": "ChIJZ7_JB4HAMioRp3qbEqR2_6U",
+      "business_name": "O'Brien Plumbing Perth",
+      "address": "2/125 Edward St, Perth WA 6000, Australia",
+      "phone": "(08) 9200 6654",
+      "rating": 4.9,
+      "review_count": 359,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:27.961Z"
+    },
+    {
+      "google_place_id": "ChIJgaK6ENa6MioRQSe7F2CUqGY",
+      "business_name": "Plumbdog",
+      "address": "59/50 St Georges Terrace, Perth WA 6000, Australia",
+      "phone": "1300 127 454",
+      "rating": 4.4,
+      "review_count": 868,
+      "google_types": [
+        "plumber",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:27.961Z"
+    },
+    {
+      "google_place_id": "ChIJxxlP4SSlMioRp4T_eFbuRbo",
+      "business_name": "Tap Doctor Plumbing Perth",
+      "address": "44 Kings Park Rd, West Perth WA 6005, Australia",
+      "phone": "(08) 6202 9332",
+      "rating": 4.5,
+      "review_count": 1193,
+      "google_types": [
+        "plumber",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:27.961Z"
+    },
+    {
+      "google_place_id": "ChIJoxBiKOu7MioRGRpN8occaRE",
+      "business_name": "No Probs Plumbing",
+      "address": "3/52 Roberts St, Osborne Park WA 6017, Australia",
+      "phone": "(08) 9315 5545",
+      "rating": 4.9,
+      "review_count": 682,
+      "google_types": [
+        "plumber",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:27.961Z"
+    },
+    {
+      "google_place_id": "ChIJq4WWB6mVMioR-S9oEWhPI3E",
+      "business_name": "G.X.R Plumbing",
+      "address": "191 St Georges Terrace, Perth WA 6000, Australia",
+      "phone": "0437 800 192",
+      "rating": 4.9,
+      "review_count": 387,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:28.813Z"
+    },
+    {
+      "google_place_id": "ChIJ1Y_PzmnMBIURPE0w_if7vys",
+      "business_name": "Tap Tech Plumbing and Gas",
+      "address": "35 Westminster St, East Victoria Park WA 6101, Australia",
+      "phone": "0493 085 350",
+      "rating": 5,
+      "review_count": 46,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:28.813Z"
+    },
+    {
+      "google_place_id": "ChIJL5CmLgC-MioRPtwDOB85Uww",
+      "business_name": "Splash and Gas Plumbing and Gas Fitting Specialists",
+      "address": "8 Ballard Mews, Success WA 6164, Australia",
+      "phone": "0410 217 090",
+      "rating": 4.9,
+      "review_count": 264,
+      "google_types": [
+        "plumber",
+        "general_contractor",
+        "point_of_interest",
+        "home_goods_store",
+        "store",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:28.813Z"
+    },
+    {
+      "google_place_id": "ChIJM7tyepyVMioRjxR52Ir2Cxc",
+      "business_name": "VH Plumb & Gas",
+      "address": "8 Orchid Pass, Thornlie WA 6108, Australia",
+      "phone": "0476 049 559",
+      "rating": 4.9,
+      "review_count": 85,
+      "google_types": [
+        "plumber",
+        "electrician",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:28.813Z"
+    },
+    {
+      "google_place_id": "ChIJse5IFpevMioRL3xCtocq09E",
+      "business_name": "Under Pressure Plumbing and Gas",
+      "address": "Hill St, East Perth WA 6004, Australia",
+      "phone": "0422 379 406",
+      "rating": 5,
+      "review_count": 104,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Perth WA",
+      "discovered_date": "2025-09-19T05:06:28.813Z"
     },
     {
       "google_place_id": "ChIJ_____2-XMioRU5fr30CZmq4",
@@ -120,7 +295,7 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Fremantle WA",
-      "discovered_date": "2025-09-19T04:07:00.698Z"
+      "discovered_date": "2025-09-19T05:06:29.646Z"
     },
     {
       "google_place_id": "ChIJn5tl9OujMioRovV6reyec54",
@@ -136,7 +311,7 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Fremantle WA",
-      "discovered_date": "2025-09-19T04:07:00.698Z"
+      "discovered_date": "2025-09-19T05:06:29.646Z"
     },
     {
       "google_place_id": "ChIJ96E6lvOjMioRIJdrb-A3W34",
@@ -152,7 +327,159 @@
       ],
       "trade_type": "electrician",
       "discovered_location": "Fremantle WA",
-      "discovered_date": "2025-09-19T04:07:00.698Z"
+      "discovered_date": "2025-09-19T05:06:29.646Z"
+    },
+    {
+      "google_place_id": "ChIJMyxAEHZz9gQRU9P2CYGaJw4",
+      "business_name": "S.Henderson Electrical",
+      "address": "149 Samson St, White Gum Valley WA 6162, Australia",
+      "phone": "0400 414 364",
+      "rating": 5,
+      "review_count": 50,
+      "google_types": [
+        "electrician",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "electrician",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:29.646Z"
+    },
+    {
+      "google_place_id": "ChIJZ-JR1nGhMioRUIAHXByHkAM",
+      "business_name": "Youngs Plumbing & Gas",
+      "address": "8/84 Stirling Hwy, North Fremantle WA 6159, Australia",
+      "phone": "(08) 9335 2076",
+      "rating": 4.9,
+      "review_count": 228,
+      "google_types": [
+        "plumber",
+        "general_contractor",
+        "point_of_interest",
+        "home_goods_store",
+        "store",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:30.442Z"
+    },
+    {
+      "google_place_id": "ChIJMX_k-0GiMioRznvICSTO_rU",
+      "business_name": "General Plumbing Co",
+      "address": "3c/36 Port Kembla Dr, Bibra Lake WA 6163, Australia",
+      "phone": "(08) 6191 2555",
+      "rating": 4.9,
+      "review_count": 341,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:30.442Z"
+    },
+    {
+      "google_place_id": "ChIJR-4xd1SiMioRhPNEs9PM5Hc",
+      "business_name": "Fremantle Plumbing Service",
+      "address": "107 Garling St, O'Connor WA 6163, Australia",
+      "phone": "(08) 9337 1414",
+      "rating": 4.6,
+      "review_count": 44,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:30.442Z"
+    },
+    {
+      "google_place_id": "ChIJ1z2Ye8ajMioR0DLF49ne4Tw",
+      "business_name": "Urban Hot Water, Plumbing and Gas",
+      "address": "15 Petra St, East Fremantle WA 6158, Australia",
+      "phone": "0403 902 820",
+      "rating": 4.9,
+      "review_count": 54,
+      "google_types": [
+        "plumber",
+        "spa",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "plumber",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:30.442Z"
+    },
+    {
+      "google_place_id": "ChIJZ-JR1nGhMioRUIAHXByHkAM",
+      "business_name": "Youngs Plumbing & Gas",
+      "address": "8/84 Stirling Hwy, North Fremantle WA 6159, Australia",
+      "phone": "(08) 9335 2076",
+      "rating": 4.9,
+      "review_count": 228,
+      "google_types": [
+        "plumber",
+        "home_goods_store",
+        "general_contractor",
+        "store",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:31.256Z"
+    },
+    {
+      "google_place_id": "ChIJ1z2Ye8ajMioR0DLF49ne4Tw",
+      "business_name": "Urban Hot Water, Plumbing and Gas",
+      "address": "15 Petra St, East Fremantle WA 6158, Australia",
+      "phone": "0403 902 820",
+      "rating": 4.9,
+      "review_count": 54,
+      "google_types": [
+        "plumber",
+        "spa",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:31.256Z"
+    },
+    {
+      "google_place_id": "ChIJR-4xd1SiMioRhPNEs9PM5Hc",
+      "business_name": "Fremantle Plumbing Service",
+      "address": "107 Garling St, O'Connor WA 6163, Australia",
+      "phone": "(08) 9337 1414",
+      "rating": 4.6,
+      "review_count": 44,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:31.256Z"
+    },
+    {
+      "google_place_id": "ChIJMX_k-0GiMioRznvICSTO_rU",
+      "business_name": "General Plumbing Co",
+      "address": "3c/36 Port Kembla Dr, Bibra Lake WA 6163, Australia",
+      "phone": "(08) 6191 2555",
+      "rating": 4.9,
+      "review_count": 341,
+      "google_types": [
+        "plumber",
+        "point_of_interest",
+        "establishment"
+      ],
+      "trade_type": "gas_fitter",
+      "discovered_location": "Fremantle WA",
+      "discovered_date": "2025-09-19T05:06:31.256Z"
     }
   ]
 }

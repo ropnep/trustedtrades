@@ -689,11 +689,13 @@ function renderTradies(tradies) {
         function filterByCategory(category) {
             const licensedOnly = document.getElementById('licensedOnly').checked;
             
-            filteredTradies = tradiesData.filter(tradie => {
-                const matchesCategory = tradie.category === category;
-                const matchesLicense = !licensedOnly || tradie.licensed;
-                return matchesCategory && matchesLicense;
-            });
+              filteredTradies = tradiesData.filter(tradie => {
+            // Fix: check both category and trade_type
+            const tradieCategory = tradie.category || tradie.trade_type;
+            const matchesCategory = tradieCategory === category;
+            const matchesLicense = !licensedOnly || tradie.licensed;
+            return matchesCategory && matchesLicense;
+        });
             
             renderTradies(filteredTradies);
             
