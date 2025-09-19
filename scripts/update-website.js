@@ -24,22 +24,19 @@ class WebsiteUpdater {
         console.log('✅ Website updated successfully');
     }
 
-    loadLatestData() {
-        const dataFiles = fs.readdirSync(path.join(__dirname, '..', 'data'))
-            .filter(file => file.startsWith('verified-tradies-'))
-            .sort()
-            .reverse();
-        
-        if (dataFiles.length === 0) {
-            console.log('No verified tradie data found');
-            return;
-        }
-        
-        const latestFile = path.join(__dirname, '..', 'data', dataFiles[0]);
-        this.tradiesData = JSON.parse(fs.readFileSync(latestFile, 'utf8'));
-        
-        console.log(`📊 Loaded ${this.tradiesData.length} tradies from ${dataFiles[0]}`);
+   loadLatestData() {
+    const tradiesFile = path.join(__dirname, '..', 'data', 'tradies.json');
+    
+    if (!fs.existsSync(tradiesFile)) {
+        console.log('No tradies.json found');
+        return;
     }
+    
+    const data = JSON.parse(fs.readFileSync(tradiesFile, 'utf8'));
+    this.tradiesData = data.tradies || [];
+    
+    console.log(`📊 Loaded ${this.tradiesData.length} tradies from tradies.json`);
+}
 
     processData() {
         // Clean and standardize data
