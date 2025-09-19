@@ -21,7 +21,6 @@ const CONFIG = {
         'Darch WA',
         'Wanneroo WA',
         'Morley WA'  // Comment out to reduce calls
-
     ],
     
     // Reduce trade types

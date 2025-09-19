@@ -2746,17 +2746,15 @@ function visitWebsite(url) {
         // Initial render
         renderTradies(tradiesData);
 
-        function populateSuburbDropdown() {
+function populateSuburbDropdown() {
     const suburbSelect = document.getElementById('suburbSelect');
-    
-    // Extract all unique suburbs from tradie data
     const allSuburbs = new Set();
     
     tradiesData.forEach(tradie => {
         if (tradie.areas && Array.isArray(tradie.areas)) {
             tradie.areas.forEach(area => {
-                // Clean up the area name (remove "WA", numbers, etc.)
-                const cleanArea = area.replace(/\s*WA\s*\d*/, '').trim();
+                // Extract suburb name from "Perth WA 6000" format
+                const cleanArea = area.replace(/\s*WA\s*\d+/g, '').trim();
                 if (cleanArea && cleanArea !== 'Perth Metro') {
                     allSuburbs.add(cleanArea);
                 }
@@ -2764,19 +2762,17 @@ function visitWebsite(url) {
         }
     });
     
-    // Sort suburbs alphabetically
     const sortedSuburbs = Array.from(allSuburbs).sort();
-    
-    // Clear existing options (except "All Perth Areas")
     suburbSelect.innerHTML = '<option value="">All Perth Areas</option>';
     
-    // Add dynamic options
     sortedSuburbs.forEach(suburb => {
         const option = document.createElement('option');
         option.value = suburb.toLowerCase();
         option.textContent = suburb;
         suburbSelect.appendChild(option);
     });
+    
+    console.log('Available suburbs:', sortedSuburbs);
 }
 
 function initializePage() {
@@ -2789,16 +2785,26 @@ function searchBySuburb() {
     const licensedOnly = document.getElementById('licensedOnly').checked;
     
     filteredTradies = tradiesData.filter(tradie => {
-        const matchesSuburb = !selectedSuburb || 
-            tradie.areas.some(area => area.toLowerCase().includes(selectedSuburb));
-        const matchesLicense = !licensedOnly || tradie.licensed;
+        let matchesSuburb = !selectedSuburb; // Show all if no suburb selected
         
+        if (selectedSuburb && tradie.areas) {
+            matchesSuburb = tradie.areas.some(area => {
+                // Extract suburb from "Perth WA 6000" format
+                const areaSuburb = area.replace(/\s*WA\s*\d+/g, '').trim().toLowerCase();
+                return areaSuburb === selectedSuburb;
+            });
+        }
+        
+        const matchesLicense = !licensedOnly || tradie.licensed;
         return matchesSuburb && matchesLicense;
     });
     
-    // Initial render with dynamic suburbs
-initializePage();
+    console.log(`Filtered: ${filteredTradies.length} tradies for suburb: ${selectedSuburb}`);
+    renderTradies(filteredTradies);
 }
+    
+// Initial render with dynamic suburbs
+initializePage();
     </script>
 </body>
 </html>
