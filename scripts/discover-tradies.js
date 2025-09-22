@@ -6,7 +6,7 @@ const { URL } = require('url');
 // CONFIGURATION - ADJUST THESE TO LIMIT API CALLS
 const CONFIG = {
     // Limit total API calls
-    MAX_API_CALLS: 150,  // Set your limit here (150 = safe test)
+    MAX_API_CALLS: 151,  // Set your limit here (151 = safe test)
     
     // Reduce suburbs (fewer suburbs = fewer calls)
     TEST_SUBURBS: [
@@ -133,7 +133,7 @@ class LimitedTradieDiscovery {
 
             const headers = {
                 'X-Goog-Api-Key': this.apiKey,
-                'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.rating,places.userRatingCount,places.types'
+                'X-Goog-FieldMask': 'places.id,places.displayName,places.formattedAddress,places.nationalPhoneNumber,places.websiteUri,places.rating,places.userRatingCount,places.types'
             };
 
             const data = await this.makePostRequest(this.textSearchUrl, requestData, headers);
@@ -167,6 +167,7 @@ class LimitedTradieDiscovery {
                 business_name: place.displayName?.text || 'Unknown Business',
                 address: place.formattedAddress,
                 phone: place.nationalPhoneNumber,
+                website: place.websiteUri,
                 rating: place.rating,
                 review_count: place.userRatingCount,
                 google_types: place.types || []
