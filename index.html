@@ -385,13 +385,10 @@
         <div class="container">
             <h1>Find Trusted Perth Tradies</h1>
             <p>Licensed professionals verified by locals, for locals</p>
-            <div class="search-container">
-        <select class="search-input" id="suburbSelect">
-        <option value="">All Perth Areas</option>
-        <!-- Options will be populated by JavaScript -->
-        </select>
-    <button class="search-btn" onclick="searchBySuburb()">Filter</button>
-</div>
+            <<div class="search-container">
+            <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
+            <button class="search-btn" onclick="searchTradies()">Search</button>
+        </div>
             <div class="filter-toggle">
                 <label>
                     <input type="checkbox" id="licensedOnly"> Show licensed tradies only
@@ -2572,23 +2569,27 @@ function visitWebsite(url) {
     window.open(websiteUrl, '_blank', 'noopener,noreferrer');
 }
 
-        function searchTradies() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const licensedOnly = document.getElementById('licensedOnly').checked;
-            
-            filteredTradies = tradiesData.filter(tradie => {
-                const matchesSearch = tradie.name.toLowerCase().includes(searchTerm) ||
-                                    tradie.specialties.some(s => s.toLowerCase().includes(searchTerm)) ||
-                                    tradie.areas.some(a => a.toLowerCase().includes(searchTerm)) ||
-                                    tradie.category.toLowerCase().includes(searchTerm);
-                
-                const matchesLicense = !licensedOnly || tradie.licensed;
-                
-                return matchesSearch && matchesLicense;
-            });
-            
-            renderTradies(filteredTradies);
-        }
+       function searchTradies() {
+    const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+    const licensedOnly = document.getElementById('licensedOnly').checked;
+    
+    filteredTradies = tradiesData.filter(tradie => {
+        // Use the actual property names from your data
+        const name = tradie.business_name || tradie.name || '';
+        const category = tradie.trade_type || tradie.category || '';
+        const address = tradie.address || '';
+        
+        const matchesSearch = name.toLowerCase().includes(searchTerm) ||
+                            category.toLowerCase().includes(searchTerm) ||
+                            address.toLowerCase().includes(searchTerm);
+        
+        const matchesLicense = !licensedOnly || tradie.licensed;
+        
+        return matchesSearch && matchesLicense;
+    });
+    
+    renderTradies(filteredTradies);
+}
 
         function filterByCategory(category) {
             const licensedOnly = document.getElementById('licensedOnly').checked;
