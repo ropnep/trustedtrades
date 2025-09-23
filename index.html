@@ -3040,6 +3040,21 @@ function searchTradies() {
     });
     
     renderTradies(filteredTradies);
+    function searchTradies() {
+    // ... existing filter code ...
+    
+    renderTradies(filteredTradies);
+    
+    // Update section title
+    const sectionTitle = document.querySelector('.tradies-section h2');
+    if (searchTerm.trim()) {
+        sectionTitle.textContent = `Search Results for "${searchTerm}" (${filteredTradies.length} found)`;
+    } else {
+        sectionTitle.textContent = 'Featured Tradies';
+    }
+    
+    // Auto-scroll
+    document.querySelector('.tradies-section').scrollIntoView({ behavior: 'smooth' });
 }
 
         function filterByCategory(category) {
