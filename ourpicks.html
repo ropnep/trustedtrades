@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Personal Recommendations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        nav a.active {
+            color: #3498db;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 2px;
+        }
+
+        /* About Page */
+        .about-hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+            color: white;
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.025em;
+        }
+
+        .about-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-text h2 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+
+        .about-text h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .about-text h3:first-of-type {
+            margin-top: 0;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            color: #555;
+            font-size: 1.1rem;
+        }
+
+        .about-text ul {
+            margin: 1.5rem 0;
+            padding-left: 0;
+        }
+
+        .about-text li {
+            list-style: none;
+            padding: 1rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .about-text li:last-child {
+            border-bottom: none;
+        }
+
+        .about-text li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 1rem;
+            color: #3498db;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-text li strong {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .about-sidebar {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid #e5e7eb;
+            height: fit-content;
+            position: sticky;
+            top: 40px;
+        }
+
+        .stats-section h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .stat-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .contact-card {
+            background: #2c3e50;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .contact-card h4 {
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .contact-card p {
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            background: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        .contact-btn:hover {
+            background: #2980b9;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .values-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .value-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: #3498db;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .value-card h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-sidebar {
+                position: static;
+                order: -1;
+            }
+
+            .stat-cards {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .stat-card {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-content {
+                padding: 60px 0;
+            }
+
+            .values-section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">🏠 Trusted Tradies Hub</a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#categories">Categories</a></li>
+                        <li><a href="ourpicks.html">Our Picks</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1>Our Personal Recommendations</h1>
+            <p>Tradies we've personally used and trust</p>
+        </div>
+    </section>
+
+ <!-- Owner Recommendations -->
+    <section class="owner-recommendations" id="recommendations">
+        <div class="container">
+            <h2>Our Personal Recommendations</h2>
+            <p class="subtitle">Tradies we've personally used and trust</p>
+            
+            <div class="recommendation-card">
+                <div class="recommendation-text">
+                    "We've used Steve's Electrical for three different jobs over the past two years. Always on time, fair pricing, and excellent quality work. He rewired our kitchen and installed new outdoor lighting - both jobs were completed faster than quoted and he cleaned up perfectly after each visit."
+                </div>
+                <div class="recommendation-author">- Perth Trades Hub Owner</div>
+            </div>
+
+            <div class="recommendation-card">
+                <div class="recommendation-text">
+                    "After being let down by two other plumbers, we found Pete's Plumbing through a neighbor's recommendation. Pete fixed our blocked drain issue that others couldn't solve and did emergency repairs during the weekend without charging excessive call-out fees. Definitely our go-to plumber now."
+                </div>
+                <div class="recommendation-author">- Perth Trades Hub Owner</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Trusted Tradies Hub by Infolayas. Connecting Perth residents with trusted local tradies.</p>
+            <p>All tradesperson licenses verified through WA Building and Energy.</p>
+        </div>
+    </footer>
+</body>
+</html>
