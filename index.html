@@ -2877,8 +2877,18 @@
 
         // Find this function in index.html and replace it:
 function renderTradies(tradies) {
-    const grid = document.getElementById('tradiesGrid');
-    grid.innerHTML = '';
+    const container = document.getElementById('tradiesSlider');
+    if (!container) {
+        console.error('tradiesSlider element not found');
+        return;
+    }
+    
+    container.innerHTML = '';
+    container.className = 'tradies-grid'; // Switch to grid layout
+    container.style.display = 'grid';
+    container.style.gridTemplateColumns = 'repeat(auto-fit, minmax(350px, 1fr))';
+    container.style.gap = '30px';
+    container.style.transform = 'none'; // Remove slider transform
 
     tradies.forEach(tradie => {
         const card = document.createElement('div');
@@ -2886,7 +2896,7 @@ function renderTradies(tradies) {
         
         const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
         
-        // Use the actual property names from your data
+        // Use your actual data property names
         const name = tradie.business_name || tradie.name || 'Unknown Business';
         const category = tradie.trade_type || tradie.category || 'general';
         const phone = tradie.phone || 'Contact via website';
@@ -2922,15 +2932,17 @@ function renderTradies(tradies) {
         🌐 Visit Website
     </button>` : 
     `<div class="contact-section" style="text-align: center; padding: 10px; background: #f8f9fa; border-radius: 5px;">
-    <strong style="color: #2c3e50;">📞 ${phone}</strong><br>
-    <small style="color: #666; font-style: italic;">Call for quotes and bookings</small>
+<strong style="color: #2c3e50;">📞 ${phone}</strong><br>
+<small style="color: #666; font-style: italic;">Call for quotes and bookings</small>
 </div>`
 }
         `;
         
-        grid.appendChild(card);
+        container.appendChild(card);
     });
 }
+            
+
 
 // Add this new function
 function visitWebsite(url) {
