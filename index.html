@@ -3354,24 +3354,11 @@ function showCategoryModal(category) {
     const modalGrid = document.getElementById('modalGrid');
     const emptyState = document.getElementById('emptyState');
 
-    // Category configuration
     const categoryConfig = {
-        'electrician': { 
-            title: 'Perth Electricians', 
-            icon: '⚡'
-        },
-        'plumber': { 
-            title: 'Perth Plumbers', 
-            icon: '🔧'
-        },
-        'gas_fitter': { 
-            title: 'Perth Gas Fitters', 
-            icon: '🔥'
-        },
-        'handyman': { 
-            title: 'Perth General Handymen', 
-            icon: '🔨'
-        }
+        'electrician': { title: 'Perth Electricians', icon: '⚡' },
+        'plumber': { title: 'Perth Plumbers', icon: '🔧' },
+        'gas_fitter': { title: 'Perth Gas Fitters', icon: '🔥' },
+        'handyman': { title: 'Perth General Handymen', icon: '🔨' }
     };
 
     const config = categoryConfig[category];
@@ -3403,36 +3390,9 @@ function showCategoryModal(category) {
         });
     }
 
-    // Show modal
     modal.style.display = 'block';
     document.body.style.overflow = 'hidden';
 }
-
-<!-- Category Modal -->
-<div class="modal-overlay" id="categoryModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 id="modalTitle">
-                <span id="modalIcon">⚡</span>
-                Perth Electricians
-            </h2>
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-stats" id="modalStats">
-                <span><strong id="modalCount">0</strong> verified professionals found</span>
-            </div>
-            <div class="modal-grid" id="modalGrid">
-                <!-- Dynamic content will be loaded here -->
-            </div>
-            <div class="empty-state" id="emptyState" style="display: none;">
-                <div class="empty-state-icon">🔍</div>
-                <h3>No results found</h3>
-                <p>We're still building our directory. Check back soon for more tradespeople in this category.</p>
-            </div>
-        </div>
-    </div>
-</div>
 
 function createModalCard(tradie) {
     const card = document.createElement('div');
