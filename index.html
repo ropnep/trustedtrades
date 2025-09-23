@@ -188,8 +188,20 @@
 }
 
 .tradie-slide {
-    min-width: calc(33.333% - 14px);
+    min-width: calc(33.333% - 14px); /* Shows 3 per view on desktop */
     flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .tradie-slide {
+        min-width: calc(100% - 0px); /* Shows 1 per view on mobile */
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .tradie-slide {
+        min-width: calc(50% - 10px); /* Shows 2 per view on tablet */
+    }
 }
 
 .slider-controls {
@@ -449,7 +461,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">🔧 Trusted Tradies Hub</div>
+                <div class="logo">🏠 Trusted Tradies Hub</div>
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
@@ -3191,15 +3203,17 @@ function showAllTradies() {
 }
 
 function initializePage() {
-    renderTradiesSlider(tradiesData); // Use slider instead of grid
+    renderTradiesSlider(tradiesData); // Start with slider showing 6 at a time
     populateSuburbDropdown();
     
     // Add slider event listeners
     document.getElementById('prevBtn').addEventListener('click', prevSlide);
     document.getElementById('nextBtn').addEventListener('click', nextSlide);
     
+    // Handle window resize
     window.addEventListener('resize', () => {
         updateSlidesPerView();
+        currentSlide = 0;
         renderTradiesSlider(tradiesData);
     });
 }
