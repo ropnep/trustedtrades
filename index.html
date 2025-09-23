@@ -59,62 +59,120 @@
             color: #3498db;
         }
 
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #3498db, #2c3e50);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
+      /* Hero Section - Professional Update */
+.hero {
+    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+    color: white;
+    padding: 100px 0 80px;
+    position: relative;
+    overflow: hidden;
+}
 
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
+.hero h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    position: relative;
+    z-index: 2;
+}
 
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto;
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+    font-weight: 300;
+    line-height: 1.4;
+    position: relative;
+    z-index: 2;
+}
 
-        .search-input {
-            flex: 1;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
 
-        .search-btn {
-            padding: 15px 30px;
-            background: #e74c3c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s;
-        }
+.search-container {
+    display: flex;
+    background: white;
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    gap: 0;
+}
 
-        .search-btn:hover {
-            background: #c0392b;
-        }
+.search-input {
+    flex: 1;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    background: transparent;
+    color: #374151;
+    outline: none;
+}
 
-        .filter-toggle {
-            margin-top: 15px;
-        }
+.search-input::placeholder {
+    color: #9ca3af;
+}
 
-        .filter-toggle input {
-            margin-right: 8px;
-        }
+.search-btn {
+    padding: 16px 32px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.search-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+}
+
+/* Mobile responsive updates */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 0 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .search-container {
+        flex-direction: column;
+        padding: 12px;
+    }
+    
+    .search-btn {
+        margin-top: 8px;
+        text-align: center;
+    }
+}
 
         /* Trade Categories */
         .categories {
@@ -483,11 +541,7 @@
             <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
             <button class="search-btn" onclick="searchTradies()">Search</button>
         </div>
-            <div class="filter-toggle">
-                <label>
-                    <input type="checkbox" id="licensedOnly"> Show licensed tradies only
-                </label>
-            </div>
+          
         </div>
     </section>
 
@@ -565,6 +619,44 @@
         </div>
     </section>
 
+    <!-- About Section -->
+<section class="about-section" id="about">
+    <div class="container">
+        <h2>About Trusted Tradies Hub</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Your Local Perth Trade Directory</h3>
+                <p>Trusted Tradies Hub was born from frustration with finding reliable tradespeople in Perth. After experiencing overpriced quotes and unreliable service, we decided to create a platform that connects Perth residents with verified, trustworthy local tradies.</p>
+                
+                <h3>What Makes Us Different</h3>
+                <ul>
+                    <li><strong>Local Focus:</strong> We exclusively serve the Perth metropolitan area, ensuring all tradies understand local requirements and conditions.</li>
+                    <li><strong>Verification Process:</strong> We verify licenses, insurance, and business credentials before listing any tradesperson.</li>
+                    <li><strong>Real Reviews:</strong> All ratings and reviews come from genuine customers who have used these services.</li>
+                    <li><strong>No Hidden Fees:</strong> Our directory is free for customers to use. Tradies pay fair listing fees, not per-lead charges.</li>
+                </ul>
+                
+                <h3>Our Mission</h3>
+                <p>To eliminate the stress and uncertainty of finding quality tradespeople in Perth by providing a reliable, transparent platform that benefits both customers and skilled tradies.</p>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Verified Tradies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Trade Categories</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Perth</div>
+                    <div class="stat-label">Metro Coverage</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -2970,7 +3062,7 @@ function visitWebsite(url) {
 
        function searchTradies() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    const licensedOnly = document.getElementById('licensedOnly').checked;
+    
     
     filteredTradies = tradiesData.filter(tradie => {
         // Use the actual property names from your data
@@ -2982,7 +3074,7 @@ function visitWebsite(url) {
                             category.toLowerCase().includes(searchTerm) ||
                             address.toLowerCase().includes(searchTerm);
         
-        const matchesLicense = !licensedOnly || tradie.licensed;
+        
         
         return matchesSearch && matchesLicense;
     });
@@ -2991,13 +3083,11 @@ function visitWebsite(url) {
 }
 
         function filterByCategory(category) {
-            const licensedOnly = document.getElementById('licensedOnly').checked;
-            
+                        
               filteredTradies = tradiesData.filter(tradie => {
             // Fix: check both category and trade_type
             const tradieCategory = tradie.category || tradie.trade_type;
             const matchesCategory = tradieCategory === category;
-            const matchesLicense = !licensedOnly || tradie.licensed;
             return matchesCategory && matchesLicense;
         });
             
@@ -3045,7 +3135,7 @@ function visitWebsite(url) {
             }
         });
 
-        document.getElementById('licensedOnly').addEventListener('change', searchTradies);
+        
 
         // Initial render
         renderTradies(tradiesData);
@@ -3102,9 +3192,9 @@ function renderTradiesSlider(tradies) {
     slider.style.transform = 'translateX(0)'; // Reset position
     
     updateSlidesPerView();
-    
-    // Only show first 6-9 tradies initially
-    const maxTradies = Math.min(tradies.length, 9);
+
+    // Only show first 6-24 tradies initially
+    const maxTradies = Math.min(tradies.length, 30);
     const displayTradies = tradies.slice(0, maxTradies);
     
     totalSlides = Math.ceil(displayTradies.length / slidesPerView);
