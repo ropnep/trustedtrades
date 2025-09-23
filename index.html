@@ -3045,16 +3045,39 @@ function searchTradies() {
     
     renderTradies(filteredTradies);
     
-    // Update section title
-    const sectionTitle = document.querySelector('.tradies-section h2');
-    if (searchTerm.trim()) {
-        sectionTitle.textContent = `Search Results for "${searchTerm}" (${filteredTradies.length} found)`;
-    } else {
-        sectionTitle.textContent = 'Featured Tradies';
-    }
+     
+    // Show search indicator
+    showSearchResults(searchTerm, filteredTradies.length);
     
     // Auto-scroll
     document.querySelector('.tradies-section').scrollIntoView({ behavior: 'smooth' });
+}
+
+function showSearchResults(term, count) {
+    // Remove existing indicator
+    const existing = document.querySelector('.search-results-indicator');
+    if (existing) existing.remove();
+    
+    if (term.trim()) {
+        const indicator = document.createElement('div');
+        indicator.className = 'search-results-indicator';
+        indicator.innerHTML = `
+            <div style="background: #e3f2fd; border: 1px solid #2196f3; padding: 15px; margin: 20px 0; border-radius: 8px; text-align: center;">
+                <strong>Search Results:</strong> Found ${count} tradies for "${term}"
+                <button onclick="clearSearch()" style="margin-left: 15px; padding: 5px 10px; background: #2196f3; color: white; border: none; border-radius: 4px; cursor: pointer;">Clear Search</button>
+            </div>
+        `;
+        
+        const section = document.querySelector('.tradies-section .container');
+        section.insertBefore(indicator, section.querySelector('h2').nextSibling);
+    }
+}
+
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    document.querySelector('.search-results-indicator').remove();
+    document.querySelector('.tradies-section h2').textContent = 'Featured Tradies';
+    renderTradiesSlider(tradiesData); // Return to slider view
 }
 
         function filterByCategory(category) {
