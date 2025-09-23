@@ -3301,7 +3301,14 @@ function showAllTradies() {
 
 function initializePage() {
     renderTradiesSlider(tradiesData); // Start with slider showing 6 at a time
-    // populateSuburbDropdown(); // Remove this line
+    
+    // Add category card event listeners for modal
+    document.querySelectorAll('.category-card').forEach(card => {
+        card.addEventListener('click', function() {
+            const category = this.dataset.category;
+            showCategoryModal(category);
+        });
+    });
     
     // Add slider event listeners
     document.getElementById('prevBtn').addEventListener('click', prevSlide);
