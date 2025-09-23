@@ -3344,6 +3344,166 @@ function searchBySuburb() {
     console.log(`Filtered: ${filteredTradies.length} tradies for suburb: ${selectedSuburb}`);
     renderTradies(filteredTradies);
 }
+
+// Modal Functions
+function showCategoryModal(category) {
+    const modal = document.getElementById('categoryModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalIcon = document.getElementById('modalIcon');
+    const modalCount = document.getElementById('modalCount');
+    const modalGrid = document.getElementById('modalGrid');
+    const emptyState = document.getElementById('emptyState');
+
+    // Category configuration
+    const categoryConfig = {
+        'electrician': { 
+            title: 'Perth Electricians', 
+            icon: '⚡'
+        },
+        'plumber': { 
+            title: 'Perth Plumbers', 
+            icon: '🔧'
+        },
+        'gas_fitter': { 
+            title: 'Perth Gas Fitters', 
+            icon: '🔥'
+        },
+        'handyman': { 
+            title: 'Perth General Handymen', 
+            icon: '🔨'
+        }
+    };
+
+    const config = categoryConfig[category];
+    if (!config) return;
+
+    // Filter tradies by category
+    const filteredTradies = tradiesData.filter(tradie => {
+        return (tradie.category === category) || (tradie.trade_type === category);
+    });
+
+    // Update modal header
+    modalIcon.textContent = config.icon;
+    modalTitle.innerHTML = `${config.icon} ${config.title}`;
+    modalCount.textContent = filteredTradies.length;
+
+    // Clear and populate modal grid
+    modalGrid.innerHTML = '';
+    
+    if (filteredTradies.length === 0) {
+        emptyState.style.display = 'block';
+        modalGrid.style.display = 'none';
+    } else {
+        emptyState.style.display = 'none';
+        modalGrid.style.display = 'grid';
+        
+        filteredTradies.forEach(tradie => {
+            const card = createModalCard(tradie);
+            modalGrid.appendChild(card);
+        });
+    }
+
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+<!-- Category Modal -->
+<div class="modal-overlay" id="categoryModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2 id="modalTitle">
+                <span id="modalIcon">⚡</span>
+                Perth Electricians
+            </h2>
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="modal-stats" id="modalStats">
+                <span><strong id="modalCount">0</strong> verified professionals found</span>
+            </div>
+            <div class="modal-grid" id="modalGrid">
+                <!-- Dynamic content will be loaded here -->
+            </div>
+            <div class="empty-state" id="emptyState" style="display: none;">
+                <div class="empty-state-icon">🔍</div>
+                <h3>No results found</h3>
+                <p>We're still building our directory. Check back soon for more tradespeople in this category.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+function createModalCard(tradie) {
+    const card = document.createElement('div');
+    card.className = 'modal-card';
+
+    const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
+    const name = tradie.business_name || tradie.name || 'Unknown Business';
+    const phone = tradie.phone || 'Contact via website';
+    const address = tradie.address || '';
+    const areas = address ? [address.split(',')[1]?.trim() || 'Perth Metro'] : ['Perth Metro'];
+    
+    card.innerHTML = `
+        <div class="modal-card-header">
+            <div>
+                <div class="modal-card-name">${name}</div>
+                ${tradie.ownerRecommended ? '<span class="owner-recommended">🏆 Owner Recommended</span>' : ''}
+            </div>
+            <div class="modal-license-badge ${tradie.licensed ? '' : 'unlicensed'}">
+                ${tradie.licensed ? '✓ Licensed' : 'Unlicensed'}
+            </div>
+        </div>
+        
+        <div class="modal-card-rating">
+            ${stars} (${tradie.review_count || tradie.reviewCount || 0} reviews)
+        </div>
+        
+        <div class="modal-card-details">
+            <p><strong>Service Areas:</strong> ${areas.join(', ')}</p>
+            <p><strong>Phone:</strong> ${phone}</p>
+            ${tradie.licensed && tradie.licenseNumber ? `<p><strong>License:</strong> ${tradie.licenseNumber}</p>` : ''}
+        </div>
+        
+        <div class="modal-card-contact">
+            <button class="modal-contact-btn primary" onclick="callTradesperson('${phone}')">
+                📞 Call
+            </button>
+            ${tradie.website ? 
+                `<button class="modal-contact-btn secondary" onclick="visitWebsite('${tradie.website}')">
+                    🌐 Website
+                </button>` :
+                `<button class="modal-contact-btn secondary" onclick="emailTradesperson('${name}', '${phone}')">
+                    ✉️ Email
+                </button>`
+            }
+        </div>
+    `;
+
+    return card;
+}
+
+function closeModal() {
+    const modal = document.getElementById('categoryModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+
+// Contact functions
+function callTradesperson(phone) {
+    if (phone && phone !== 'Contact via website') {
+        window.location.href = `tel:${phone}`;
+    } else {
+        alert('Phone number not available');
+    }
+}
+
+function emailTradesperson(businessName, phone) {
+    const subject = `Inquiry from Perth Trades Directory`;
+    const body = `Hi ${businessName},\n\nI found your business on Perth Trades Directory and would like to inquire about your services.\n\nPlease contact me to discuss my requirements.\n\nThanks!`;
+    
+    window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
     
 // Replace the current initializePage() call with:
 document.addEventListener('DOMContentLoaded', function() {
