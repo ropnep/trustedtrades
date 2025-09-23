@@ -3097,11 +3097,19 @@ function updateSlidesPerView() {
 function renderTradiesSlider(tradies) {
     const slider = document.getElementById('tradiesSlider');
     slider.innerHTML = '';
+    slider.className = 'tradies-slider'; // Make sure it's in slider mode
+    slider.style.display = 'flex';
+    slider.style.transform = 'translateX(0)'; // Reset position
     
     updateSlidesPerView();
-    totalSlides = Math.ceil(tradies.length / slidesPerView);
+    
+    // Only show first 6-9 tradies initially
+    const maxTradies = Math.min(tradies.length, 9);
+    const displayTradies = tradies.slice(0, maxTradies);
+    
+    totalSlides = Math.ceil(displayTradies.length / slidesPerView);
 
-    tradies.forEach(tradie => {
+    displayTradies.forEach(tradie => {
         const slide = document.createElement('div');
         slide.className = 'tradie-slide';
         
@@ -3148,8 +3156,13 @@ function renderTradiesSlider(tradies) {
         slider.appendChild(slide);
     });
 
+    currentSlide = 0; // Reset to first slide
     updateSliderDots();
     updateSliderPosition();
+    
+    // Show slider controls
+    document.querySelector('.slider-controls').style.display = 'flex';
+    document.querySelector('.view-all-btn').style.display = 'block';
 }
 
 function updateSliderDots() {
