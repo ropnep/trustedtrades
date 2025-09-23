@@ -3055,9 +3055,141 @@ function populateSuburbDropdown() {
     console.log('Available suburbs:', sortedSuburbs);
 }
 
-function initializePage() {
+// Slider functionality
+let currentSlide = 0;
+let slidesPerView = 3;
+let totalSlides = 0;
+
+function updateSlidesPerView() {
+    if (window.innerWidth <= 768) {
+        slidesPerView = 1;
+    } else if (window.innerWidth <= 1024) {
+        slidesPerView = 2;
+    } else {
+        slidesPerView = 3;
+    }
+}
+
+function renderTradiesSlider(tradies) {
+    const slider = document.getElementById('tradiesSlider');
+    slider.innerHTML = '';
+    
+    updateSlidesPerView();
+    totalSlides = Math.ceil(tradies.length / slidesPerView);
+
+    tradies.forEach(tradie => {
+        const slide = document.createElement('div');
+        slide.className = 'tradie-slide';
+        
+        const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
+        const name = tradie.business_name || tradie.name || 'Unknown Business';
+        const category = tradie.trade_type || tradie.category || 'general';
+        const phone = tradie.phone || 'Contact via website';
+        const address = tradie.address || '';
+        const areas = address ? [address.split(',')[1]?.trim() || 'Perth Metro'] : ['Perth Metro'];
+        
+        slide.innerHTML = `
+            <div class="tradie-card">
+                <div class="tradie-header">
+                    <div>
+                        <div class="tradie-name">${name}</div>
+                        ${tradie.ownerRecommended ? '<span class="owner-recommended">🏆 Owner Recommended</span>' : ''}
+                    </div>
+                    <div class="license-badge ${tradie.licensed ? '' : 'unlicensed'}">
+                        ${tradie.licensed ? '✓ Licensed' : 'Unlicensed'}
+                    </div>
+                </div>
+                
+                <div class="rating">
+                    ${stars} (${tradie.review_count || tradie.reviewCount || 0} reviews)
+                </div>
+                
+                <div class="tradie-details">
+                    <p><strong>Service Type:</strong> ${category}</p>
+                    <p><strong>Service Areas:</strong> ${areas.join(', ')}</p>
+                    <p><strong>Phone:</strong> ${phone}</p>
+                </div>
+                
+                ${(tradie.website || tradie.websiteUri) ? 
+                    `<button class="contact-btn" onclick="visitWebsite('${tradie.website || tradie.websiteUri}')">
+                        🌐 Visit Website
+                    </button>` : 
+                    `<div style="text-align: center; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                        <strong style="color: #2c3e50;">📞 ${phone}</strong>
+                    </div>`
+                }
+            </div>
+        `;
+        
+        slider.appendChild(slide);
+    });
+
+    updateSliderDots();
+    updateSliderPosition();
+}
+
+function updateSliderDots() {
+    const dotsContainer = document.getElementById('sliderDots');
+    dotsContainer.innerHTML = '';
+    
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = `slider-dot ${i === currentSlide ? 'active' : ''}`;
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function updateSliderPosition() {
+    const slider = document.getElementById('tradiesSlider');
+    const translateX = currentSlide * (100 / slidesPerView);
+    slider.style.transform = `translateX(-${translateX}%)`;
+    
+    document.querySelectorAll('.slider-dot').forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+    });
+    
+    document.getElementById('prevBtn').disabled = currentSlide === 0;
+    document.getElementById('nextBtn').disabled = currentSlide >= totalSlides - 1;
+}
+
+function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        updateSliderPosition();
+    }
+}
+
+function prevSlide() {
+    if (currentSlide > 0) {
+        currentSlide--;
+        updateSliderPosition();
+    }
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateSliderPosition();
+}
+
+function showAllTradies() {
+    document.querySelector('.slider-controls').style.display = 'none';
+    document.querySelector('.view-all-btn').style.display = 'none';
     renderTradies(tradiesData);
+}
+
+function initializePage() {
+    renderTradiesSlider(tradiesData); // Use slider instead of grid
     populateSuburbDropdown();
+    
+    // Add slider event listeners
+    document.getElementById('prevBtn').addEventListener('click', prevSlide);
+    document.getElementById('nextBtn').addEventListener('click', nextSlide);
+    
+    window.addEventListener('resize', () => {
+        updateSlidesPerView();
+        renderTradiesSlider(tradiesData);
+    });
 }
 
 function searchBySuburb() {
