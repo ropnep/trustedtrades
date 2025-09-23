@@ -3023,9 +3023,8 @@ function visitWebsite(url) {
     window.open(websiteUrl, '_blank', 'noopener,noreferrer');
 }
 
-       function searchTradies() {
+function searchTradies() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-    
     
     filteredTradies = tradiesData.filter(tradie => {
         // Use the actual property names from your data
@@ -3037,9 +3036,7 @@ function visitWebsite(url) {
                             category.toLowerCase().includes(searchTerm) ||
                             address.toLowerCase().includes(searchTerm);
         
-        
-        
-        return matchesSearch && matchesLicense;
+        return matchesSearch; // Remove the "matchesLicense" part
     });
     
     renderTradies(filteredTradies);
