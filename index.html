@@ -3398,7 +3398,7 @@ function renderTradiesSlider(tradies) {
     updateSlidesPerView();
 
     // Only show first 6-24 tradies initially
-    const maxTradies = Math.min(tradies.length, 30);
+    const maxTradies = Math.min(tradies.length, 45);
     const displayTradies = tradies.slice(0, maxTradies);
     
     totalSlides = Math.ceil(displayTradies.length / slidesPerView);
@@ -3523,6 +3523,24 @@ function initializePage() {
     // Add slider event listeners
     document.getElementById('prevBtn').addEventListener('click', prevSlide);
     document.getElementById('nextBtn').addEventListener('click', nextSlide);
+
+      // Modal close events
+    const modal = document.getElementById('categoryModal');
+    if (modal) {
+        // Close when clicking outside modal
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+        
+        // Close with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal.style.display === 'block') {
+                closeModal();
+            }
+        });
+    }
     
     // Handle window resize
     window.addEventListener('resize', () => {
@@ -3564,6 +3582,11 @@ function showCategoryModal(category) {
     const modalGrid = document.getElementById('modalGrid');
     const emptyState = document.getElementById('emptyState');
 
+      // Check if all elements exist
+    if (!modal || !modalTitle || !modalIcon || !modalCount || !modalGrid || !emptyState) {
+        console.error('Modal elements not found');
+        return;
+    }
     const categoryConfig = {
         'electrician': { title: 'Perth Electricians', icon: '⚡' },
         'plumber': { title: 'Perth Plumbers', icon: '🔧' },
@@ -3655,16 +3678,9 @@ function createModalCard(tradie) {
 
 function closeModal() {
     const modal = document.getElementById('categoryModal');
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-
-// Contact functions
-function callTradesperson(phone) {
-    if (phone && phone !== 'Contact via website') {
-        window.location.href = `tel:${phone}`;
-    } else {
-        alert('Phone number not available');
+    if (modal) {  // Add this check
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     }
 }
 
