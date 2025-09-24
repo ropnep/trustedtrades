@@ -59,324 +59,92 @@
             color: #3498db;
         }
 
-      /* Hero Section - Professional Update */
-.hero {
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
-    color: white;
-    padding: 100px 0 80px;
-    position: relative;
-    overflow: hidden;
-}
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
-}
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+        }
 
-.hero h1 {
-    font-size: 3.2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    line-height: 1.2;
-    letter-spacing: -0.025em;
-    position: relative;
-    z-index: 2;
-}
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            position: relative;
+            z-index: 2;
+        }
 
-.hero p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    opacity: 0.95;
-    font-weight: 300;
-    line-height: 1.4;
-    position: relative;
-    z-index: 2;
-}
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+            line-height: 1.4;
+            position: relative;
+            z-index: 2;
+        }
 
-.search-container {
-    max-width: 600px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 2;
-}
+        .search-container {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            gap: 0;
+            position: relative;
+            z-index: 2;
+        }
 
-.search-container {
-    display: flex;
-    background: white;
-    border-radius: 50px;
-    padding: 8px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    gap: 0;
-}
+        .search-input {
+            flex: 1;
+            padding: 16px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            background: transparent;
+            color: #374151;
+            outline: none;
+        }
 
-.search-input {
-    flex: 1;
-    padding: 16px 24px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    background: transparent;
-    color: #374151;
-    outline: none;
-}
+        .search-input::placeholder {
+            color: #9ca3af;
+        }
 
-.search-input::placeholder {
-    color: #9ca3af;
-}
+        .search-btn {
+            padding: 16px 32px;
+            background: #dc2626;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
 
-.search-btn {
-    padding: 16px 32px;
-    background: #dc2626;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: all 0.3s;
-    white-space: nowrap;
-}
-
-.search-btn:hover {
-    background: #b91c1c;
-    transform: translateY(-1px);
-    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
-}
-
-/* Modal Overlay Styles */
-.modal-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
-    backdrop-filter: blur(5px);
-}
-
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    border-radius: 15px;
-    width: 90%;
-    max-width: 1000px;
-    max-height: 80vh;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-    animation: modalSlideIn 0.3s ease-out;
-}
-
-@keyframes modalSlideIn {
-    from {
-        opacity: 0;
-        transform: translate(-50%, -60%);
-    }
-    to {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.modal-header {
-    background: linear-gradient(135deg, #2563eb, #1e40af);
-    color: white;
-    padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.modal-header h2 {
-    margin: 0;
-    font-size: 1.8rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.modal-close {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 2rem;
-    cursor: pointer;
-    padding: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background-color 0.2s;
-}
-
-.modal-close:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.modal-body {
-    padding: 30px;
-    max-height: 60vh;
-    overflow-y: auto;
-}
-
-.modal-stats {
-    background: #f8fafc;
-    padding: 15px 20px;
-    border-radius: 10px;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.modal-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.modal-card {
-    border: 1px solid #e5e7eb;
-    border-radius: 10px;
-    padding: 20px;
-    transition: all 0.2s;
-    background: white;
-}
-
-.modal-card:hover {
-    border-color: #2563eb;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
-    transform: translateY(-2px);
-}
-
-.modal-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 15px;
-}
-
-.modal-card-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.modal-license-badge {
-    background: #27ae60;
-    color: white;
-    padding: 4px 8px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: bold;
-}
-
-.modal-license-badge.unlicensed {
-    background: #f39c12;
-}
-
-.modal-card-rating {
-    color: #f39c12;
-    margin: 10px 0;
-}
-
-.modal-card-details {
-    margin: 15px 0;
-}
-
-.modal-card-details p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-}
-
-.modal-card-contact {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-}
-
-.modal-contact-btn {
-    flex: 1;
-    padding: 10px 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: all 0.3s;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-}
-
-.modal-contact-btn.primary {
-    background: #3498db;
-    color: white;
-}
-
-.modal-contact-btn.primary:hover {
-    background: #2980b9;
-}
-
-.modal-contact-btn.secondary {
-    background: #95a5a6;
-    color: white;
-}
-
-.modal-contact-btn.secondary:hover {
-    background: #7f8c8d;
-}
-
-.empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: #6b7280;
-}
-
-.empty-state-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    opacity: 0.3;
-}
-
-.empty-state h3 {
-    color: #374151;
-    margin-bottom: 10px;
-}
-
-/* Mobile responsive updates */
-@media (max-width: 768px) {
-    .hero {
-        padding: 80px 0 60px;
-    }
-    
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .search-container {
-        flex-direction: column;
-        padding: 12px;
-    }
-    
-    .search-btn {
-        margin-top: 8px;
-        text-align: center;
-    }
-}
+        .search-btn:hover {
+            background: #b91c1c;
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+        }
 
         /* Trade Categories */
         .categories {
@@ -422,7 +190,7 @@
             margin-bottom: 15px;
         }
 
-        /* Tradies Grid */
+        /* Tradies Section */
         .tradies-section {
             padding: 60px 0;
             background: #f8f9fa;
@@ -435,10 +203,106 @@
             color: #2c3e50;
         }
 
+        /* Slider Styles */
+        .tradies-slider-container {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .tradies-slider {
+            display: flex;
+            transition: transform 0.3s ease;
+            gap: 20px;
+        }
+
+        .tradie-slide {
+            min-width: calc(33.333% - 14px);
+            flex-shrink: 0;
+        }
+
+        .slider-controls {
+            text-align: center;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .slider-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .slider-btn:hover {
+            background: #2980b9;
+        }
+
+        .slider-btn:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+        }
+
+        .slider-dots {
+            display: flex;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #bdc3c7;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .slider-dot.active {
+            background: #3498db;
+        }
+
+        .view-all-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .view-all-btn:hover {
+            background: #c0392b;
+        }
+
+        /* Grid Styles (for filtered results) */
         .tradies-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .tradie-slide {
+                min-width: calc(50% - 10px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tradie-slide {
+                min-width: calc(100% - 0px);
+            }
         }
 
         .tradie-card {
@@ -519,6 +383,22 @@
             background: #2980b9;
         }
 
+        .back-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            margin: 20px auto;
+            display: block;
+        }
+
+        .back-btn:hover {
+            background: #2980b9;
+        }
+
         /* Footer */
         footer {
             background: #2c3e50;
@@ -529,12 +409,26 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .hero {
+                padding: 80px 0 60px;
             }
-
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
             .search-container {
                 flex-direction: column;
+                padding: 12px;
+            }
+            
+            .search-btn {
+                margin-top: 8px;
+                text-align: center;
             }
 
             .header-content {
@@ -545,32 +439,6 @@
             nav ul {
                 gap: 15px;
             }
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            position: absolute;
-            right: 20px;
-            top: 15px;
-        }
-
-        .close:hover {
-            color: black;
         }
     </style>
 </head>
@@ -598,75 +466,57 @@
             <h1>Find Trusted Perth Tradies</h1>
             <p>Licensed professionals verified by locals, for locals</p>
             <div class="search-container">
-            <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
-            <button class="search-btn" onclick="searchTradies()">Search</button>
-        </div>
+                <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
+                <button class="search-btn" onclick="searchTradies()">Search</button>
+            </div>
         </div>
     </section>
 
     <!-- Categories -->
-<section class="categories" id="categories">
-    <div class="container">
-        <h2>Trade Categories</h2>
-        <div class="category-grid">
-            <div class="category-card" data-category="electrician">
-                <div class="category-icon">⚡</div>
-                <h3>Electricians</h3>
-                <p>Licensed electrical professionals for all your power needs</p>
-            </div>
-            <div class="category-card" data-category="plumber">
-                <div class="category-icon">🔧</div>
-                <h3>Plumbers</h3>
-                <p>Licensed plumbing experts for repairs and installations</p>
-            </div>
-            <div class="category-card" data-category="gas_fitter">
-                <div class="category-icon">🔥</div>
-                <h3>Gas Fitters</h3>
-                <p>Licensed gas professionals for safe installations</p>
-            </div>
-            <div class="category-card" data-category="handyman">
-                <div class="category-icon">🔨</div>
-                <h3>General Handymen</h3>
-                <p>Reliable handymen for general repairs and maintenance</p>
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Trade Categories</h2>
+            <div class="category-grid">
+                <div class="category-card" data-category="electrician">
+                    <div class="category-icon">⚡</div>
+                    <h3>Electricians</h3>
+                    <p>Licensed electrical professionals for all your power needs</p>
+                </div>
+                <div class="category-card" data-category="plumber">
+                    <div class="category-icon">🔧</div>
+                    <h3>Plumbers</h3>
+                    <p>Licensed plumbing experts for repairs and installations</p>
+                </div>
+                <div class="category-card" data-category="gas_fitter">
+                    <div class="category-icon">🔥</div>
+                    <h3>Gas Fitters</h3>
+                    <p>Licensed gas professionals for safe installations</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-<!-- Category Modal -->
-<div class="modal-overlay" id="categoryModal">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h2 id="modalTitle">
-                <span id="modalIcon">⚡</span>
-                Perth Electricians
-            </h2>
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-        </div>
-        <div class="modal-body">
-            <div class="modal-stats" id="modalStats">
-                <span><strong id="modalCount">0</strong> verified professionals found</span>
-            </div>
-            <div class="modal-grid" id="modalGrid">
-                <!-- Dynamic content will be loaded here -->
-            </div>
-            <div class="empty-state" id="emptyState" style="display: none;">
-                <div class="empty-state-icon">🔍</div>
-                <h3>No results found</h3>
-                <p>We're still building our directory. Check back soon for more tradespeople in this category.</p>
-            </div>
-        </div>
-    </div>
-</div>
+    </section>
 
     <!-- Tradies Listing -->
     <section class="tradies-section">
-       <div class="container">
-        <h2>Featured Tradies</h2>
-        <div class="tradies-grid" id="tradiesGrid">
-            <!-- Tradie cards will be populated by JavaScript -->
+        <div class="container">
+            <h2>Featured Tradies</h2>
+            <div class="tradies-slider-container" id="sliderContainer">
+                <div class="tradies-slider" id="tradiesSlider">
+                    <!-- Tradie slides will be populated by JavaScript -->
+                </div>
+            </div>
+            <div class="slider-controls" id="sliderControls">
+                <button class="slider-btn" id="prevBtn">‹</button>
+                <div class="slider-dots" id="sliderDots"></div>
+                <button class="slider-btn" id="nextBtn">›</button>
+            </div>
+            <div style="text-align: center;">
+                <button class="view-all-btn" id="viewAllBtn" onclick="showAllTradies()">View All Tradies</button>
+            </div>
+            <div class="tradies-grid" id="tradiesGrid" style="display: none;">
+                <!-- Grid view for filtered results -->
+            </div>
         </div>
-       </div>
     </section>
 
     <!-- Footer -->
@@ -677,19 +527,8 @@
         </div>
     </footer>
 
-    <!-- Contact Modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2>Contact Tradie</h2>
-            <div id="contactDetails">
-                <!-- Contact details will be populated by JavaScript -->
-            </div>
-        </div>
-    </div>
-
     <script>
-    // Sample tradie data
+        // Sample tradie data
         const tradiesData = [
           {
                     "id": 1,
@@ -711,7 +550,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Spacecubed/45 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.796Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 2,
@@ -733,7 +572,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "215 Stirling St, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 3,
@@ -755,7 +594,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "285 Lord St, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 4,
@@ -777,7 +616,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 3/16 Fortitude Bvd, Gnangara WA 6077, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 5,
@@ -799,7 +638,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 15/43 Edward St, Osborne Park WA 6017, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 6,
@@ -821,7 +660,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/125 Edward St, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 7,
@@ -843,7 +682,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "191 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 8,
@@ -865,7 +704,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "59/50 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 9,
@@ -887,7 +726,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "44 Kings Park Rd, West Perth WA 6005, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 10,
@@ -909,7 +748,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/52 Roberts St, Osborne Park WA 6017, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 11,
@@ -931,7 +770,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8 Ballard Mews, Success WA 6164, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 12,
@@ -953,7 +792,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Hill St, East Perth WA 6004, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 13,
@@ -975,7 +814,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "70 McCourt St, West Leederville WA 6007, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 14,
@@ -997,7 +836,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "34 Jersey St, Jolimont WA 6014, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 15,
@@ -1019,7 +858,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 4/16 Ashburton Terrace, Fremantle WA 6160, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 16,
@@ -1041,7 +880,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "120 Petra St, Bicton WA 6157, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 17,
@@ -1063,7 +902,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 2b/125 Garling St, O'Connor WA 6163, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 18,
@@ -1085,7 +924,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "149 Samson St, White Gum Valley WA 6162, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 19,
@@ -1107,7 +946,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8/84 Stirling Hwy, North Fremantle WA 6159, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 20,
@@ -1129,7 +968,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "107 Garling St, O'Connor WA 6163, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 21,
@@ -1151,7 +990,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3c/36 Port Kembla Dr, Bibra Lake WA 6163, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 22,
@@ -1173,7 +1012,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "15 Petra St, East Fremantle WA 6158, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 23,
@@ -1195,7 +1034,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/7 Packard St, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 24,
@@ -1217,7 +1056,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Manitoba Ct, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 25,
@@ -1239,7 +1078,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "16 Arrow Pl, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 26,
@@ -1261,7 +1100,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "79 Wildflower Dr, Carramar WA 6031, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 27,
@@ -1283,7 +1122,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Fulton Ln, Currambine WA 6028, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 28,
@@ -1305,7 +1144,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5/10 Franklin Ln, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 29,
@@ -1327,7 +1166,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/27 Caloundra Rd, Clarkson WA 6030, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 30,
@@ -1349,7 +1188,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Gilbreth Bend, Tapping WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 31,
@@ -1371,7 +1210,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "62 Comrie Rd, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 32,
@@ -1393,7 +1232,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/5 Mallaig Way, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 33,
@@ -1415,7 +1254,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 11/14 Whyalla St, Willetton WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 34,
@@ -1437,7 +1276,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/10 Wittenberg Dr, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 35,
@@ -1459,7 +1298,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "CNR Ranford &, Nicholson Rd, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 36,
@@ -1481,7 +1320,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/10 Wittenberg Dr, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 37,
@@ -1503,7 +1342,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/71 Tacoma Cct, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 38,
@@ -1525,7 +1364,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8 Orchid Pass, Thornlie WA 6108, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 39,
@@ -1547,7 +1386,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "17 Evinrude Bend, East Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 40,
@@ -1569,7 +1408,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2 Yanrey St, Golden Bay WA 6174, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 41,
@@ -1591,7 +1430,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "16 Hydra Cl, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 42,
@@ -1613,7 +1452,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "6 Bunbury Pl, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 43,
@@ -1635,7 +1474,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 4/29 Hurrell Way, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 44,
@@ -1657,7 +1496,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "16/8 Pickard Ave, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 45,
@@ -1679,7 +1518,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "17 Royal Rd, Safety Bay WA 6169, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 46,
@@ -1701,7 +1540,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/56 Alex Wood Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 47,
@@ -1723,7 +1562,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "21 Oban Loop, Bedfordale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 48,
@@ -1745,7 +1584,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "11 Cartland Ct, Bedfordale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 49,
@@ -1767,7 +1606,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7 Browning Rd, Armadale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 50,
@@ -1789,7 +1628,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "196 Croyden Rd, Roleystone WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 51,
@@ -1811,7 +1650,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/10 Gillam Dr, Kelmscott WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 52,
@@ -1833,7 +1672,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5 Dumsday Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 53,
@@ -1855,7 +1694,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/18 Nettleton Rd, Byford WA 6122, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 54,
@@ -1877,7 +1716,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 6/17 Remisko Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 55,
@@ -1899,7 +1738,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Balivanich Loop, Seville Grove WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 56,
@@ -1921,7 +1760,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5/29 Remisko Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 57,
@@ -1943,7 +1782,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "55 Heritage Dr, Roleystone WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 58,
@@ -1965,7 +1804,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7 Blossom Pl, Coodanup WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 59,
@@ -1987,7 +1826,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5/6 Dollyup St, Stake Hill WA 6181, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 60,
@@ -2009,7 +1848,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/7 Kulin Way, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 61,
@@ -2031,7 +1870,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/14 Tindale St, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 62,
@@ -2053,7 +1892,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/14 Thornborough Rd, Greenfields WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 63,
@@ -2075,7 +1914,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "By Appointment Only, 83 Anstruther Rd, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 64,
@@ -2097,7 +1936,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/17 Rafferty Rd, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 65,
@@ -2119,7 +1958,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "15 Creon Way, Silver Sands WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 66,
@@ -2141,7 +1980,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 2/12 Tindale St, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 67,
@@ -2163,7 +2002,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8 Rafferty Rd, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 68,
@@ -2185,7 +2024,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "9 Longmeadow Vista, Meadow Springs WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 69,
@@ -2207,7 +2046,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Hepburn Ave, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 70,
@@ -2228,7 +2067,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "67 Lakeshore Cl, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 71,
@@ -2250,7 +2089,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "6/6 Arvida St, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 72,
@@ -2272,7 +2111,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "6 Zion Grove, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 73,
@@ -2293,7 +2132,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "34 Cashmere Gardens, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 74,
@@ -2315,7 +2154,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Illawarra Cres S, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 75,
@@ -2337,7 +2176,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "53 Hamelin Dr, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 76,
@@ -2359,7 +2198,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/30 Industry St, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 77,
@@ -2381,7 +2220,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "324 Landsdale Rd, Landsdale WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 78,
@@ -2403,7 +2242,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "14 Vale St, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 79,
@@ -2425,7 +2264,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/5 Beneficial Way, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 80,
@@ -2447,7 +2286,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "20 Papuana Pl, Marangaroo WA 6064, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 81,
@@ -2469,7 +2308,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/65 Distinction Rd, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 82,
@@ -2491,7 +2330,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "17 Eglinton Dr, Darch WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 83,
@@ -2513,7 +2352,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Uint 8/35 Darlot Rd, Landsdale WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 84,
@@ -2535,7 +2374,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "10 Cantrell Cct, Landsdale WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 85,
@@ -2557,7 +2396,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "U7/84 Distinction Rd, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 86,
@@ -2579,7 +2418,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/90 Distinction Rd, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 87,
@@ -2600,7 +2439,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "50/7 Conquest Way, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.921Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 88,
@@ -2622,7 +2461,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Topeka Pl, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 89,
@@ -2643,7 +2482,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Celestine St, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 90,
@@ -2665,7 +2504,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "27 Helsinki Terrace, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 91,
@@ -2687,7 +2526,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "14 Bamboore Cres, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 92,
@@ -2709,7 +2548,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7 Battersea Way, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 93,
@@ -2731,7 +2570,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "55 Napier Rd, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 94,
@@ -2753,7 +2592,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "18 Driscoll Way, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 95,
@@ -2775,7 +2614,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "167 Seventh Ave, Inglewood WA 6052, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 96,
@@ -2797,7 +2636,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "11/14 Boag Pl, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 97,
@@ -2819,7 +2658,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5B Barnett Ct, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 98,
@@ -2841,7 +2680,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 22/515 Walter Rd E, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 99,
@@ -2863,7 +2702,7 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "36 Leeds St, Dianella WA 6059, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           },
           {
                     "id": 100,
@@ -2885,35 +2724,101 @@
                     "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1 Stanley St, Dianella WA 6059, Australia",
-                    "lastUpdated": "2025-09-24T13:02:20.922Z"
+                    "lastUpdated": "2025-09-24T13:18:31.405Z"
           }
 ];
 
-        let filteredTradies = [...tradiesData];
+        // Slider functionality
+        let currentSlide = 0;
+        let slidesPerView = 3;
+        let totalSlides = 0;
+        let isSliderMode = true;
 
-        // Main render function - displays all tradies in grid
-        function renderTradies(tradies) {
-            const container = document.getElementById('tradiesGrid');
-            if (!container) {
-                console.error('tradiesGrid element not found');
-                return;
+        function updateSlidesPerView() {
+            if (window.innerWidth <= 768) {
+                slidesPerView = 1;
+            } else if (window.innerWidth <= 1024) {
+                slidesPerView = 2;
+            } else {
+                slidesPerView = 3;
             }
+        }
+
+        // Render tradies in slider mode (shows 6 initially with navigation)
+        function renderTradiesSlider(tradies) {
+            const slider = document.getElementById('tradiesSlider');
+            const sliderContainer = document.getElementById('sliderContainer');
+            const sliderControls = document.getElementById('sliderControls');
+            const viewAllBtn = document.getElementById('viewAllBtn');
+            const gridContainer = document.getElementById('tradiesGrid');
             
-            container.innerHTML = '';
+            // Show slider, hide grid
+            sliderContainer.style.display = 'block';
+            sliderControls.style.display = 'flex';
+            viewAllBtn.style.display = 'block';
+            gridContainer.style.display = 'none';
+            isSliderMode = true;
+            
+            slider.innerHTML = '';
+            slider.className = 'tradies-slider';
+            slider.style.display = 'flex';
+            slider.style.transform = 'translateX(0)';
+            
+            updateSlidesPerView();
+
+            // Show first 6-9 tradies in slider
+            const maxTradies = Math.min(tradies.length, 9);
+            const displayTradies = tradies.slice(0, maxTradies);
+            
+            totalSlides = Math.ceil(displayTradies.length / slidesPerView);
+
+            displayTradies.forEach(tradie => {
+                const slide = document.createElement('div');
+                slide.className = 'tradie-slide';
+                slide.innerHTML = createTradieCardHTML(tradie);
+                slider.appendChild(slide);
+            });
+
+            currentSlide = 0;
+            updateSliderDots();
+            updateSliderPosition();
+        }
+
+        // Render all tradies in grid mode (for search results and "View All")
+        function renderTradiesGrid(tradies) {
+            const slider = document.getElementById('sliderContainer');
+            const sliderControls = document.getElementById('sliderControls');
+            const viewAllBtn = document.getElementById('viewAllBtn');
+            const gridContainer = document.getElementById('tradiesGrid');
+            
+            // Hide slider, show grid
+            slider.style.display = 'none';
+            sliderControls.style.display = 'none';
+            viewAllBtn.style.display = 'none';
+            gridContainer.style.display = 'grid';
+            isSliderMode = false;
+            
+            gridContainer.innerHTML = '';
 
             tradies.forEach(tradie => {
                 const card = document.createElement('div');
                 card.className = 'tradie-card';
-                
-                const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
-                
-                const name = tradie.name || 'Unknown Business';
-                const category = tradie.category || 'general';
-                const phone = tradie.phone || 'Contact via website';
-                const address = tradie.address || '';
-                const areas = address ? [address.split(',')[1]?.trim() || 'Perth Metro'] : ['Perth Metro'];
-                
-                card.innerHTML = `
+                card.innerHTML = createTradieCardHTML(tradie);
+                gridContainer.appendChild(card);
+            });
+        }
+
+        // Create tradie card HTML (shared between slider and grid)
+        function createTradieCardHTML(tradie) {
+            const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
+            const name = tradie.name || 'Unknown Business';
+            const category = tradie.category || 'general';
+            const phone = tradie.phone || 'Contact via website';
+            const address = tradie.address || '';
+            const areas = address ? [address.split(',')[1]?.trim() || 'Perth Metro'] : ['Perth Metro'];
+            
+            return `
+                <div class="tradie-card">
                     <div class="tradie-header">
                         <div>
                             <div class="tradie-name">${name}</div>
@@ -2931,25 +2836,74 @@
                     <div class="tradie-details">
                         <p><strong>Service Type:</strong> ${category}</p>
                         <p><strong>Service Areas:</strong> ${areas.join(', ')}</p>
-                        <p><strong>Address:</strong> ${address}</p>
-                        <p><strong>Specialties:</strong> ${tradie.specialties ? tradie.specialties.join(', ') : 'General services'}</p>
-                        <p><strong>About:</strong> ${tradie.description || 'Professional services in Perth metro area.'}</p>
-                        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
+                        <p><strong>Phone:</strong> ${phone}</p>
+                        ${tradie.specialties ? `<p><strong>Specialties:</strong> ${tradie.specialties.join(', ')}</p>` : ''}
                     </div>
                     
                     ${tradie.website ? 
                         `<button class="contact-btn" onclick="visitWebsite('${tradie.website}')">
                             🌐 Visit Website
                         </button>` : 
-                        `<div class="contact-section" style="text-align: center; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                        `<div style="text-align: center; padding: 10px; background: #f8f9fa; border-radius: 5px;">
                             <strong style="color: #2c3e50;">📞 ${phone}</strong><br>
                             <small style="color: #666; font-style: italic;">Call for quotes and bookings</small>
                         </div>`
                     }
-                `;
-                
-                container.appendChild(card);
+                </div>
+            `;
+        }
+
+        function updateSliderDots() {
+            const dotsContainer = document.getElementById('sliderDots');
+            dotsContainer.innerHTML = '';
+            
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = `slider-dot ${i === currentSlide ? 'active' : ''}`;
+                dot.onclick = () => goToSlide(i);
+                dotsContainer.appendChild(dot);
+            }
+        }
+
+        function updateSliderPosition() {
+            const slider = document.getElementById('tradiesSlider');
+            const translateX = currentSlide * (100 / slidesPerView);
+            slider.style.transform = `translateX(-${translateX}%)`;
+            
+            document.querySelectorAll('.slider-dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
             });
+            
+            document.getElementById('prevBtn').disabled = currentSlide === 0;
+            document.getElementById('nextBtn').disabled = currentSlide >= totalSlides - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                updateSliderPosition();
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                updateSliderPosition();
+            }
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSliderPosition();
+        }
+
+        // Main render function - chooses slider or grid based on context
+        function renderTradies(tradies, forceGrid = false) {
+            if (forceGrid || !isSliderMode) {
+                renderTradiesGrid(tradies);
+            } else {
+                renderTradiesSlider(tradies);
+            }
         }
 
         // Visit website function
@@ -2965,7 +2919,7 @@
         function searchTradies() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
             
-            filteredTradies = tradiesData.filter(tradie => {
+            const filteredTradies = tradiesData.filter(tradie => {
                 const name = tradie.name || '';
                 const category = tradie.category || '';
                 const address = tradie.address || '';
@@ -2975,7 +2929,7 @@
                        address.toLowerCase().includes(searchTerm);
             });
             
-            renderTradies(filteredTradies);
+            renderTradies(filteredTradies, true); // Force grid mode for search results
             showSearchResults(searchTerm, filteredTradies.length);
             document.querySelector('.tradies-section').scrollIntoView({ behavior: 'smooth' });
         }
@@ -3004,143 +2958,63 @@
             const indicator = document.querySelector('.search-results-indicator');
             if (indicator) indicator.remove();
             document.querySelector('.tradies-section h2').textContent = 'Featured Tradies';
-            renderTradies(tradiesData);
+            isSliderMode = true;
+            renderTradies(tradiesData); // Back to slider mode
         }
 
-        // Modal Functions
+        // Category filtering - shows results in grid mode
         function showCategoryModal(category) {
-            const modal = document.getElementById('categoryModal');
-            const modalTitle = document.getElementById('modalTitle');
-            const modalIcon = document.getElementById('modalIcon');
-            const modalCount = document.getElementById('modalCount');
-            const modalGrid = document.getElementById('modalGrid');
-            const emptyState = document.getElementById('emptyState');
-
-            // Debug log to see what elements are found
-            console.log('Modal elements check:', {
-                modal: !!modal,
-                modalTitle: !!modalTitle,
-                modalIcon: !!modalIcon,
-                modalCount: !!modalCount,
-                modalGrid: !!modalGrid,
-                emptyState: !!emptyState
-            });
-
-            if (!modal || !modalTitle || !modalIcon || !modalCount || !modalGrid || !emptyState) {
-                console.error('Modal elements not found - falling back to simple category filter');
-                // Fallback: just filter and show results in main grid
-                const filteredTradies = tradiesData.filter(tradie => tradie.category === category);
-                renderTradies(filteredTradies);
-                document.querySelector('.tradies-section h2').textContent = `${category.charAt(0).toUpperCase() + category.slice(1)}s in Perth`;
-                document.querySelector('.tradies-section').scrollIntoView({ behavior: 'smooth' });
-                return;
-            }
-
+            console.log('Category clicked:', category);
+            
             const categoryConfig = {
-                'electrician': { title: 'Perth Electricians', icon: '⚡' },
-                'plumber': { title: 'Perth Plumbers', icon: '🔧' },
-                'gas_fitter': { title: 'Perth Gas Fitters', icon: '🔥' },
-                'handyman': { title: 'Perth General Handymen', icon: '🔨' }
+                'electrician': { title: 'Electricians', icon: '⚡' },
+                'plumber': { title: 'Plumbers', icon: '🔧' },
+                'gas_fitter': { title: 'Gas Fitters', icon: '🔥' }
             };
 
             const config = categoryConfig[category];
             if (!config) return;
 
             const filteredTradies = tradiesData.filter(tradie => tradie.category === category);
-
-            modalIcon.textContent = config.icon;
-            modalTitle.innerHTML = `${config.icon} ${config.title}`;
-            modalCount.textContent = filteredTradies.length;
-
-            modalGrid.innerHTML = '';
             
-            if (filteredTradies.length === 0) {
-                emptyState.style.display = 'block';
-                modalGrid.style.display = 'none';
-            } else {
-                emptyState.style.display = 'none';
-                modalGrid.style.display = 'grid';
-                
-                filteredTradies.forEach(tradie => {
-                    const card = createModalCard(tradie);
-                    modalGrid.appendChild(card);
-                });
-            }
-
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
+            renderTradies(filteredTradies, true); // Force grid mode for category results
+            document.querySelector('.tradies-section h2').textContent = `${config.icon} Perth ${config.title} (${filteredTradies.length} found)`;
+            
+            addShowAllButton();
+            document.querySelector('.tradies-section').scrollIntoView({ behavior: 'smooth' });
         }
 
-        function createModalCard(tradie) {
-            const card = document.createElement('div');
-            card.className = 'modal-card';
-
-            const stars = '★'.repeat(Math.floor(tradie.rating)) + '☆'.repeat(5 - Math.floor(tradie.rating));
-            const name = tradie.name || 'Unknown Business';
-            const phone = tradie.phone || 'Contact via website';
-            const address = tradie.address || '';
-            const areas = address ? [address.split(',')[1]?.trim() || 'Perth Metro'] : ['Perth Metro'];
+        function addShowAllButton() {
+            const existingButton = document.querySelector('.show-all-tradies-btn');
+            if (existingButton) existingButton.remove();
             
-            card.innerHTML = `
-                <div class="modal-card-header">
-                    <div>
-                        <div class="modal-card-name">${name}</div>
-                        ${tradie.ownerRecommended ? '<span class="owner-recommended">🏆 Owner Recommended</span>' : ''}
-                    </div>
-                    <div class="modal-license-badge ${tradie.licensed ? '' : 'unlicensed'}">
-                        ${tradie.licensed ? '✓ Licensed' : 'Unlicensed'}
-                    </div>
-                </div>
-                
-                <div class="modal-card-rating">
-                    ${stars} (${tradie.reviewCount || 0} reviews)
-                </div>
-                
-                <div class="modal-card-details">
-                    <p><strong>Service Areas:</strong> ${areas.join(', ')}</p>
-                    <p><strong>Phone:</strong> ${phone}</p>
-                    ${tradie.licensed && tradie.licenseNumber ? `<p><strong>License:</strong> ${tradie.licenseNumber}</p>` : ''}
-                </div>
-                
-                <div class="modal-card-contact">
-                    <button class="modal-contact-btn primary" onclick="callTradesperson('${phone}')">
-                        📞 Call
+            const button = document.createElement('div');
+            button.className = 'show-all-tradies-btn';
+            button.innerHTML = `
+                <div style="text-align: center; margin: 20px 0;">
+                    <button class="back-btn" onclick="showAllTradies()">
+                        ← Back to All Tradies
                     </button>
-                    ${tradie.website ? 
-                        `<button class="modal-contact-btn secondary" onclick="visitWebsite('${tradie.website}')">
-                            🌐 Website
-                        </button>` :
-                        `<button class="modal-contact-btn secondary" onclick="emailTradesperson('${name}', '${phone}')">
-                            ✉️ Email
-                        </button>`
-                    }
                 </div>
             `;
-
-            return card;
+            
+            const h2 = document.querySelector('.tradies-section h2');
+            h2.parentNode.insertBefore(button, h2.nextSibling);
         }
 
-        function closeModal() {
-            const modal = document.getElementById('categoryModal');
-            if (modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        }
-
-        function callTradesperson(phone) {
-            window.location.href = `tel:${phone}`;
-        }
-
-        function emailTradesperson(businessName, phone) {
-            const subject = `Inquiry from Perth Trades Directory`;
-            const body = `Hi ${businessName},\n\nI found your business on Perth Trades Directory and would like to inquire about your services.\n\nPlease contact me to discuss my requirements.\n\nThanks!`;
-            window.location.href = `mailto:?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        function showAllTradies() {
+            document.querySelector('.tradies-section h2').textContent = 'Featured Tradies';
+            isSliderMode = true;
+            renderTradies(tradiesData); // Back to slider mode
+            
+            const button = document.querySelector('.show-all-tradies-btn');
+            if (button) button.remove();
         }
 
         // Initialize the page
         function initializePage() {
-            renderTradies(tradiesData);
+            console.log('Initializing page with', tradiesData.length, 'tradies');
+            renderTradies(tradiesData); // Start in slider mode
             
             // Add category card event listeners
             document.querySelectorAll('.category-card').forEach(card => {
@@ -3150,38 +3024,31 @@
                 });
             });
 
-            // Modal close events
-            const modal = document.getElementById('categoryModal');
-            if (modal) {
-                modal.addEventListener('click', function(e) {
-                    if (e.target === this) {
-                        closeModal();
-                    }
-                });
-                
-                document.addEventListener('keydown', function(e) {
-                    if (e.key === 'Escape' && modal.style.display === 'block') {
-                        closeModal();
-                    }
-                });
-            }
+            // Add slider event listeners
+            document.getElementById('prevBtn').addEventListener('click', prevSlide);
+            document.getElementById('nextBtn').addEventListener('click', nextSlide);
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (isSliderMode) {
+                    updateSlidesPerView();
+                    currentSlide = 0;
+                    renderTradiesSlider(tradiesData);
+                }
+            });
         }
 
         // Event listeners
         document.addEventListener('DOMContentLoaded', function() {
             console.log('DOM loaded, tradiesData length:', tradiesData.length);
-            if (typeof tradiesData !== 'undefined' && tradiesData.length > 0) {
-                initializePage();
-                
-                // Search input event listener
-                document.getElementById('searchInput').addEventListener('keypress', function(e) {
-                    if (e.key === 'Enter') {
-                        searchTradies();
-                    }
-                });
-            } else {
-                console.error('tradiesData is not available');
-            }
+            initializePage();
+            
+            // Search input event listener
+            document.getElementById('searchInput').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchTradies();
+                }
+            });
         });
     </script>
 </body>
