@@ -6,7 +6,7 @@ const { URL } = require('url');
 // CONFIGURATION - ADJUST THESE TO LIMIT API CALLS
 const CONFIG = {
     // Limit total API calls
-    MAX_API_CALLS: 151,  // Set your limit here (151 = safe test)
+    MAX_API_CALLS: 250,  // Set your limit here (250 = safe test)
     
     // Reduce suburbs (fewer suburbs = fewer calls)
     TEST_SUBURBS: [

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Personal Recommendations</title>
+    <title>Our Personal Recommendations - Trusted Tradies Hub</title>
     <style>
         * {
             margin: 0;
@@ -24,12 +24,13 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Header - Match Main Page Style */
         header {
-            background: #2c3e50;
-            color: white;
+            background: #ffffff;
+            color: #2c3e50;
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #e1e8ed;
         }
 
         .header-content {
@@ -39,269 +40,274 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e40af;
             text-decoration: none;
-            color: white;
+            letter-spacing: -0.5px;
+            font-family: 'Arial Black', Arial, sans-serif;
+        }
+
+        .logo .hub {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .logo .trusted {
+            color: #2c3e50;
+        }
+
+        .logo .tradies {
+            color: #1e40af;
+            font-style: italic;
+        }
+
+        .logo-tagline {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 400;
+            margin-top: 2px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
         }
 
         nav a {
-            color: white;
+            color: #475569;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
             font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            position: relative;
         }
 
         nav a:hover {
-            color: #3498db;
+            color: #1e40af;
+            background-color: #f1f5f9;
         }
 
         nav a.active {
-            color: #3498db;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 2px;
+            color: #1e40af;
+            background-color: #eff6ff;
         }
 
-        /* About Page */
-        .about-hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+        /* Hero Section - Match Main Page Style */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 100%);
             color: white;
             padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
             text-align: center;
         }
 
-        .about-hero h1 {
+        .hero-badge {
+            display: inline-block;
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border: 1px solid rgba(251, 191, 36, 0.2);
+        }
+
+        .hero h1 {
             font-size: 3rem;
-            font-weight: 700;
+            font-weight: 800;
             margin-bottom: 1rem;
+            line-height: 1.1;
             letter-spacing: -0.025em;
         }
 
-        .about-hero p {
-            font-size: 1.3rem;
+        .hero p {
+            font-size: 1.15rem;
             opacity: 0.9;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .about-content {
+        /* Recommendations Section */
+        .recommendations-section {
             padding: 80px 0;
             background: white;
         }
 
-        .about-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-            align-items: start;
+        .recommendations-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px auto;
         }
 
-        .about-text h2 {
-            color: #2c3e50;
+        .recommendations-intro h2 {
             font-size: 2.2rem;
-            margin-bottom: 2rem;
-            font-weight: 600;
-        }
-
-        .about-text h3 {
             color: #2c3e50;
-            font-size: 1.5rem;
-            margin: 2.5rem 0 1rem;
+            margin-bottom: 1rem;
             font-weight: 600;
         }
 
-        .about-text h3:first-of-type {
-            margin-top: 0;
-        }
-
-        .about-text p {
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-            color: #555;
+        .recommendations-intro p {
             font-size: 1.1rem;
+            color: #64748b;
+            line-height: 1.8;
         }
 
-        .about-text ul {
-            margin: 1.5rem 0;
-            padding-left: 0;
-        }
-
-        .about-text li {
-            list-style: none;
-            padding: 1rem 0;
-            border-bottom: 1px solid #e5e7eb;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .about-text li:last-child {
-            border-bottom: none;
-        }
-
-        .about-text li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 1rem;
-            color: #3498db;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-
-        .about-text li strong {
-            color: #2c3e50;
-            font-weight: 600;
-        }
-
-        .about-sidebar {
-            background: #f8f9fa;
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid #e5e7eb;
-            height: fit-content;
-            position: sticky;
-            top: 40px;
-        }
-
-        .stats-section h3 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        .stat-cards {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            border-left: 4px solid #3498db;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #3498db;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .stat-label {
-            color: #666;
-            font-weight: 500;
-            font-size: 1rem;
-        }
-
-        .contact-card {
-            background: #2c3e50;
-            color: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 30px;
-        }
-
-        .contact-card h4 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-
-        .contact-card p {
-            opacity: 0.9;
-            margin-bottom: 20px;
-        }
-
-        .contact-btn {
-            background: #3498db;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-            font-weight: 500;
-            transition: background 0.3s;
-        }
-
-        .contact-btn:hover {
-            background: #2980b9;
-        }
-
-        /* Values Section */
-        .values-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .values-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 3rem;
-            font-weight: 600;
-        }
-
-        .values-grid {
+        .recommendation-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .value-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+        .recommendation-card {
+            background: #f8fafc;
+            border-left: 5px solid #fbbf24;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
         }
 
-        .value-card:hover {
-            transform: translateY(-5px);
+        .recommendation-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
 
-        .value-icon {
-            width: 80px;
-            height: 80px;
-            background: #3498db;
+        .recommendation-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .recommendation-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
             border-radius: 50%;
-            margin: 0 auto 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: white;
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
         }
 
-        .value-card h3 {
-            color: #2c3e50;
+        .recommendation-title {
+            flex: 1;
+        }
+
+        .recommendation-title h3 {
             font-size: 1.4rem;
-            margin-bottom: 15px;
+            color: #2c3e50;
+            margin-bottom: 5px;
             font-weight: 600;
         }
 
-        .value-card p {
-            color: #666;
+        .recommendation-category {
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .recommendation-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            line-height: 1.8;
+            color: #374151;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .recommendation-text::before {
+            content: '"';
+            font-size: 3rem;
+            color: #fbbf24;
+            position: absolute;
+            left: -15px;
+            top: -10px;
+            font-family: Georgia, serif;
+        }
+
+        .recommendation-author {
+            text-align: right;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+
+        .recommendation-author::before {
+            content: "— ";
+            color: #64748b;
+        }
+
+        /* Coming Soon Section */
+        .coming-soon {
+            background: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .coming-soon h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .coming-soon p {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
             line-height: 1.6;
+        }
+
+        .notify-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .notify-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
         }
 
         /* Footer */
@@ -314,56 +320,54 @@
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .about-hero h1 {
-                font-size: 2rem;
+            .hero {
+                padding: 60px 0 50px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
             }
 
-            .about-hero p {
-                font-size: 1.1rem;
+            .hero p {
+                font-size: 1rem;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
+            .recommendations-section {
+                padding: 60px 0;
             }
 
-            .about-sidebar {
-                position: static;
-                order: -1;
+            .recommendation-card {
+                padding: 30px 25px;
             }
 
-            .stat-cards {
-                flex-direction: row;
-                flex-wrap: wrap;
+            .recommendation-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
             }
 
-            .stat-card {
-                flex: 1;
-                min-width: 120px;
+            .recommendation-text::before {
+                display: none;
             }
 
             .header-content {
                 flex-direction: column;
                 gap: 20px;
+                text-align: center;
+            }
+
+            .logo-container {
+                text-align: center;
             }
 
             nav ul {
-                gap: 15px;
+                gap: 20px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            .values-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .about-content {
-                padding: 60px 0;
-            }
-
-            .values-section {
-                padding: 60px 0;
+            .coming-soon {
+                padding: 50px 0;
             }
         }
     </style>
@@ -373,48 +377,91 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">🏠 Trusted Tradies Hub</a>
+                <div class="logo-container">
+                    <div class="logo">
+                        <span class="trusted">Trusted</span> 
+                        <span class="tradies">Tradies</span> 
+                        <span class="hub">HUB</span>
+                    </div>
+                    <div class="logo-tagline">Verified Local Professionals</div>
+                </div>
                 <nav>
                     <ul>
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="index.html#categories">Categories</a></li>
-                        <li><a href="ourpicks.html">Our Picks</a></li>
-                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="index.html#categories">Browse</a></li>
+                        <li><a href="ourpicks.html" class="active">Recommended</a></li>
+                        <li><a href="about.html">About</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- About Hero -->
-    <section class="about-hero">
+    <!-- Hero Section -->
+    <section class="hero">
         <div class="container">
-            <h1>Our Personal Recommendations</h1>
-            <p>Tradies we've personally used and trust</p>
+            <div class="hero-content">
+                <div class="hero-badge">🏆 Owner's Personal Experience</div>
+                <h1>Our Personal Recommendations</h1>
+                <p>Tradespeople we've personally used and genuinely trust for quality work</p>
+            </div>
         </div>
     </section>
 
- <!-- Owner Recommendations -->
-    <section class="owner-recommendations" id="recommendations">
+    <!-- Recommendations Section -->
+    <section class="recommendations-section">
         <div class="container">
-            <h2>Our Personal Recommendations</h2>
-            <h3 class="subtitle">Tradies we've personally used and trust</h3>
-            
-           
-                <p>"We've used Steve's Electrical for three different jobs over the past two years. Always on time, fair pricing, and excellent quality work. He rewired our kitchen and installed new outdoor lighting - both jobs were completed faster than quoted and he cleaned up perfectly after each visit."</p>
-                <p>- Perth Trades Hub Owner</p>
+            <div class="recommendations-intro">
+                <h2>Tested & Trusted</h2>
+                <p>These are real experiences from actual jobs we've had done at our own properties. We're sharing honest feedback about tradies who delivered quality work, fair pricing, and reliable service.</p>
+            </div>
 
-                <p>"After being let down by two other plumbers, we found Pete's Plumbing through a neighbor's recommendation. Pete fixed our blocked drain issue that others couldn't solve and did emergency repairs during the weekend without charging excessive call-out fees. Definitely our go-to plumber now."</p>
-                <p>- Perth Trades Hub Owner</p>
-            
+            <div class="recommendation-cards">
+                <div class="recommendation-card">
+                    <div class="recommendation-header">
+                        <div class="recommendation-icon">⚡</div>
+                        <div class="recommendation-title">
+                            <h3>Steve's Electrical</h3>
+                            <div class="recommendation-category">Licensed Electrician</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text">
+                        We've used Steve's Electrical for three different jobs over the past two years. Always on time, fair pricing, and excellent quality work. He rewired our kitchen and installed new outdoor lighting - both jobs were completed faster than quoted and he cleaned up perfectly after each visit. Professional communication and no surprise charges.
+                    </div>
+                    <div class="recommendation-author">Trusted Tradies Hub Owner</div>
+                </div>
+
+                <div class="recommendation-card">
+                    <div class="recommendation-header">
+                        <div class="recommendation-icon">🔧</div>
+                        <div class="recommendation-title">
+                            <h3>Pete's Plumbing</h3>
+                            <div class="recommendation-category">Licensed Plumber</div>
+                        </div>
+                    </div>
+                    <div class="recommendation-text">
+                        After being let down by two other plumbers, we found Pete's Plumbing through a neighbor's recommendation. Pete fixed our blocked drain issue that others couldn't solve and did emergency repairs during the weekend without charging excessive call-out fees. Definitely our go-to plumber now - honest, reliable, and fairly priced.
+                    </div>
+                    <div class="recommendation-author">Trusted Tradies Hub Owner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+        <div class="container">
+            <h2>More Recommendations Coming Soon</h2>
+            <p>As we personally use more tradies for our own projects, we'll continue adding honest reviews and recommendations. We only recommend tradies we've actually hired and had positive experiences with.</p>
+            <a href="mailto:info@trustedtradieshub.com.au?subject=Recommend a Tradie" class="notify-btn">Suggest a Tradie</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Trusted Tradies Hub by Infolayas. Connecting Perth residents with trusted local tradies.</p>
-            <p>All tradesperson licenses verified through WA Building and Energy.</p>
+            <p>Last updated: 19/09/2025, 12:12:21 pm | &copy; 2025 Trusted Tradies Hub by Infolayas. Connecting Perth residents with trusted local tradies.</p>
+            <p>Verify all licenses through WA Building and Energy before hiring.</p>
         </div>
     </footer>
 </body>
