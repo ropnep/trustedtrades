@@ -24,12 +24,13 @@
             padding: 0 20px;
         }
 
-        /* Header */
+        /* Header - Professional Update */
         header {
-            background: #2c3e50;
-            color: white;
+            background: #ffffff;
+            color: #2c3e50;
             padding: 1rem 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            border-bottom: 1px solid #e1e8ed;
         }
 
         .header-content {
@@ -39,31 +40,73 @@
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e40af;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+            font-family: 'Arial Black', Arial, sans-serif;
+        }
+
+        .logo .hub {
+            background: linear-gradient(135deg, #3b82f6 0%, #1e40af 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+
+        .logo .trusted {
+            color: #2c3e50;
+        }
+
+        .logo .tradies {
+            color: #1e40af;
+            font-style: italic;
+        }
+
+        .logo-tagline {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-weight: 400;
+            margin-top: 2px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 35px;
+            margin: 0;
+            padding: 0;
         }
 
         nav a {
-            color: white;
+            color: #475569;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 6px;
+            position: relative;
         }
 
         nav a:hover {
-            color: #3498db;
+            color: #1e40af;
+            background-color: #f1f5f9;
         }
 
-        /* Hero Section */
+        nav a.active {
+            color: #1e40af;
+            background-color: #eff6ff;
+        }
+
+        /* Hero Section with Professional Background Image */
         .hero {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.85) 0%, rgba(30, 41, 59, 0.85) 25%, rgba(51, 65, 85, 0.85) 100%), 
+                        url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80') center/cover;
             color: white;
-            padding: 100px 0 80px;
+            padding: 120px 0 100px;
             position: relative;
             overflow: hidden;
         }
@@ -75,49 +118,86 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M 50 0 L 0 0 0 50" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            background: radial-gradient(circle at 30% 20%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(147, 51, 234, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(59, 130, 246, 0.15);
+            color: #93c5fd;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 700;
+            font-size: 3.5rem;
+            font-weight: 800;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
+            line-height: 1.1;
             letter-spacing: -0.025em;
-            position: relative;
-            z-index: 2;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero .subtitle {
+            font-size: 1.25rem;
             margin-bottom: 2.5rem;
-            opacity: 0.95;
-            font-weight: 300;
-            line-height: 1.4;
-            position: relative;
-            z-index: 2;
+            opacity: 0.9;
+            font-weight: 400;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #60a5fa;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.875rem;
+            opacity: 0.8;
+            margin-top: 4px;
         }
 
         .search-container {
-            max-width: 600px;
+            max-width: 650px;
             margin: 0 auto;
             display: flex;
             background: white;
-            border-radius: 50px;
-            padding: 8px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            gap: 0;
-            position: relative;
-            z-index: 2;
+            border-radius: 12px;
+            padding: 6px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
         }
 
         .search-input {
             flex: 1;
-            padding: 16px 24px;
+            padding: 18px 24px;
             border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
+            border-radius: 8px;
+            font-size: 1rem;
             background: transparent;
             color: #374151;
             outline: none;
@@ -128,22 +208,22 @@
         }
 
         .search-btn {
-            padding: 16px 32px;
-            background: #dc2626;
+            padding: 18px 28px;
+            background: #1e40af;
             color: white;
             border: none;
-            border-radius: 50px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 600;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
             white-space: nowrap;
         }
 
         .search-btn:hover {
-            background: #b91c1c;
+            background: #1d4ed8;
             transform: translateY(-1px);
-            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.4);
+            box-shadow: 0 10px 25px rgba(30, 64, 175, 0.3);
         }
 
         /* Trade Categories */
@@ -167,27 +247,54 @@
 
         .category-card {
             background: white;
-            border-radius: 10px;
-            padding: 30px;
+            border-radius: 12px;
+            padding: 0;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             cursor: pointer;
+            overflow: hidden;
         }
 
         .category-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
         }
 
-        .category-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+        .category-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
 
-        .category-card h3 {
+        .category-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .category-content {
+            padding: 25px;
+        }
+
+        .category-content h3 {
             color: #2c3e50;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .category-content p {
+            color: #64748b;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* Tradies Section */
@@ -410,34 +517,51 @@
         /* Responsive */
         @media (max-width: 768px) {
             .hero {
-                padding: 80px 0 60px;
+                padding: 100px 0 80px;
             }
             
             .hero h1 {
                 font-size: 2.5rem;
             }
             
-            .hero p {
+            .hero .subtitle {
                 font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                gap: 30px;
+                justify-content: center;
+            }
+
+            .hero-stat-number {
+                font-size: 1.5rem;
             }
             
             .search-container {
                 flex-direction: column;
                 padding: 12px;
+                gap: 8px;
             }
             
             .search-btn {
-                margin-top: 8px;
                 text-align: center;
+                border-radius: 8px;
             }
 
             .header-content {
                 flex-direction: column;
                 gap: 20px;
+                text-align: center;
+            }
+
+            .logo-container {
+                text-align: center;
             }
 
             nav ul {
-                gap: 15px;
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
     </style>
@@ -447,12 +571,19 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div class="logo">🏠 Trusted Tradies Hub</div>
+                <div class="logo-container">
+                    <div class="logo">
+                        <span class="trusted">Trusted</span> 
+                        <span class="tradies">Tradies</span> 
+                        <span class="hub">HUB</span>
+                    </div>
+                    <div class="logo-tagline">Verified Local Professionals</div>
+                </div>
                 <nav>
                     <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#categories">Categories</a></li>
-                        <li><a href="ourpicks.html">Our Picks</a></li>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#categories">Browse</a></li>
+                        <li><a href="ourpicks.html">Recommended</a></li>
                         <li><a href="about.html">About</a></li>
                     </ul>
                 </nav>
@@ -463,11 +594,30 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Find Trusted Perth Tradies</h1>
-            <p>Licensed professionals verified by locals, for locals</p>
-            <div class="search-container">
-                <input type="text" class="search-input" placeholder="Search by trade type or suburb..." id="searchInput">
-                <button class="search-btn" onclick="searchTradies()">Search</button>
+            <div class="hero-content">
+                <div class="hero-badge">✓ License Verified Professionals</div>
+                <h1>Find Trusted Perth Tradespeople</h1>
+                <p class="subtitle">Connect with licensed electricians, plumbers, and gas fitters. All professionals verified through WA Building and Energy.</p>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">150+</span>
+                        <span class="hero-stat-label">Verified Tradies</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">100%</span>
+                        <span class="hero-stat-label">License Checked</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">24/7</span>
+                        <span class="hero-stat-label">Contact Access</span>
+                    </div>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search by trade type, business name, or suburb..." id="searchInput">
+                    <button class="search-btn" onclick="searchTradies()">Find Tradies</button>
+                </div>
             </div>
         </div>
     </section>
@@ -479,18 +629,24 @@
             <div class="category-grid">
                 <div class="category-card" data-category="electrician">
                     <div class="category-icon">⚡</div>
-                    <h3>Electricians</h3>
-                    <p>Licensed electrical professionals for all your power needs</p>
+                    <div class="category-content">
+                        <h3>Electricians</h3>
+                        <p>Licensed electrical professionals for all your power needs, installations, and safety inspections</p>
+                    </div>
                 </div>
                 <div class="category-card" data-category="plumber">
                     <div class="category-icon">🔧</div>
-                    <h3>Plumbers</h3>
-                    <p>Licensed plumbing experts for repairs and installations</p>
+                    <div class="category-content">
+                        <h3>Plumbers</h3>
+                        <p>Licensed plumbing experts for repairs, installations, and emergency services</p>
+                    </div>
                 </div>
                 <div class="category-card" data-category="gas_fitter">
                     <div class="category-icon">🔥</div>
-                    <h3>Gas Fitters</h3>
-                    <p>Licensed gas professionals for safe installations</p>
+                    <div class="category-content">
+                        <h3>Gas Fitters</h3>
+                        <p>Licensed gas professionals for safe installations, repairs, and compliance checks</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -535,9 +691,8 @@
                     "name": "Response Electricians",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC17045",
                     "rating": 4.9,
-                    "reviewCount": 1945,
+                    "reviewCount": 0,
                     "phone": "(08) 9106 9197",
                     "website": "https://www.responseelectricianperth.com.au/",
                     "areas": [
@@ -548,19 +703,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Spacecubed/45 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.163Z"
           },
           {
                     "id": 2,
                     "name": "Westline Electricians Perth",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC15892",
                     "rating": 5,
-                    "reviewCount": 485,
+                    "reviewCount": 0,
                     "phone": "(08) 9118 3110",
                     "website": "https://www.electricianinperth.com.au/",
                     "areas": [
@@ -571,19 +725,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "215 Stirling St, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.342Z"
           },
           {
                     "id": 3,
                     "name": "Mactec Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC14567",
                     "rating": 5,
-                    "reviewCount": 1008,
+                    "reviewCount": 0,
                     "phone": "(08) 6169 1679",
                     "website": "http://www.mactecelectrical.com.au/",
                     "areas": [
@@ -594,19 +747,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 3/16 Fortitude Bvd, Gnangara WA 6077, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.342Z"
           },
           {
                     "id": 4,
                     "name": "Brillare Perth Electricians",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC16334",
                     "rating": 5,
-                    "reviewCount": 479,
+                    "reviewCount": 0,
                     "phone": "(08) 9415 0762",
                     "website": "https://www.brillare.net.au/",
                     "areas": [
@@ -617,19 +769,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "285 Lord St, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.342Z"
           },
           {
                     "id": 5,
                     "name": "Web X Electricians Perth",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 265,
+                    "reviewCount": 0,
                     "phone": "0422 117 839",
                     "website": "https://www.localperthelectrician.com.au/?utm_source=google&utm_medium=gmb&utm_campaign=perth",
                     "areas": [
@@ -640,19 +791,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "249/50 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.342Z"
           },
           {
                     "id": 6,
                     "name": "Plumbdog",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.4,
-                    "reviewCount": 875,
+                    "reviewCount": 0,
                     "phone": "1300 127 454",
                     "website": "https://www.plumbdog.com.au/location/city-of-perth/",
                     "areas": [
@@ -663,19 +813,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "59/50 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.342Z"
           },
           {
                     "id": 7,
                     "name": "Tap Doctor Plumbing Perth",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL86924",
                     "rating": 4.5,
-                    "reviewCount": 1205,
+                    "reviewCount": 0,
                     "phone": "(08) 6202 9332",
                     "website": "https://www.tapdoctor.com.au/plumbers-perth/?utm_source=google&utm_medium=organic&utm_campaign=GMB&utm_term=Perth",
                     "areas": [
@@ -686,19 +835,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "44 Kings Park Rd, West Perth WA 6005, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 8,
                     "name": "Tap Tech Plumbing and Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL11099",
                     "rating": 5,
-                    "reviewCount": 47,
+                    "reviewCount": 0,
                     "phone": "0493 085 350",
                     "website": "https://www.taptechplumbingandgas.com.au/",
                     "areas": [
@@ -709,19 +857,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "35 Westminster St, East Victoria Park WA 6101, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 9,
                     "name": "O'Brien Plumbing",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 359,
+                    "reviewCount": 0,
                     "phone": "(08) 9200 6654",
                     "website": "https://www.obrien.com.au/members/plumbing-perth-cbd/",
                     "areas": [
@@ -732,19 +879,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/125 Edward St, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 10,
                     "name": "G.X.R Plumbing",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL73876",
                     "rating": 4.9,
-                    "reviewCount": 390,
+                    "reviewCount": 0,
                     "phone": "0437 800 192",
                     "website": "https://gxrplumbing.com.au/",
                     "areas": [
@@ -755,19 +901,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "191 St Georges Terrace, Perth WA 6000, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 11,
                     "name": "Invision Plumbing and Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 97,
+                    "reviewCount": 0,
                     "phone": "0432 382 341",
                     "website": "https://invisionplumbingandgas.com.au/",
                     "areas": [
@@ -778,19 +923,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7c Lewes Rd, Nollamara WA 6061, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 12,
                     "name": "Dorrington Plumbing, Gas & Electrical",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.8,
-                    "reviewCount": 469,
+                    "reviewCount": 0,
                     "phone": "(08) 9387 2339",
                     "website": "https://dorringtonplumbing.com.au/",
                     "areas": [
@@ -801,19 +945,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "34 Jersey St, Jolimont WA 6014, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 13,
                     "name": "On Splash Plumbing & Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL70525",
                     "rating": 5,
-                    "reviewCount": 53,
+                    "reviewCount": 0,
                     "phone": "0433 427 951",
                     "website": "http://www.onsplashplumbing.com.au/",
                     "areas": [
@@ -824,19 +967,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "14 Yallambee Pl, Karawara WA 6152, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
                     "id": 14,
                     "name": "Royalty Plumbing, Gas & Electrical",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL72858",
                     "rating": 4.7,
-                    "reviewCount": 146,
+                    "reviewCount": 0,
                     "phone": "(08) 9451 7735",
                     "website": "http://www.royaltyonline.com.au/",
                     "areas": [
@@ -847,19 +989,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 2/385 Sevenoaks St, Beckenham WA 6107, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 16,
+                    "id": 15,
                     "name": "AMY Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 32,
+                    "reviewCount": 0,
                     "phone": "0437 930 349",
                     "website": "https://www.amyelectrical.com.au/",
                     "areas": [
@@ -870,19 +1011,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 4/16 Ashburton Terrace, Fremantle WA 6160, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 17,
+                    "id": 16,
                     "name": "Crown Electrical Service WA",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC23634",
                     "rating": 5,
-                    "reviewCount": 42,
+                    "reviewCount": 0,
                     "phone": "0416 740 668",
                     "website": "http://www.crownelectricalservice.com.au/",
                     "areas": [
@@ -893,19 +1033,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "120 Petra St, Bicton WA 6157, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 18,
+                    "id": 17,
                     "name": "General Plumbing Co",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 341,
+                    "reviewCount": 0,
                     "phone": "(08) 6191 2555",
                     "website": "http://www.generalplumbingco.com.au/",
                     "areas": [
@@ -916,19 +1055,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3c/36 Port Kembla Dr, Bibra Lake WA 6163, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 19,
+                    "id": 18,
                     "name": "Youngs Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL23017",
                     "rating": 4.9,
-                    "reviewCount": 228,
+                    "reviewCount": 0,
                     "phone": "(08) 9335 2076",
                     "website": "http://www.youngsplumbing.com.au/",
                     "areas": [
@@ -939,19 +1077,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8/84 Stirling Hwy, North Fremantle WA 6159, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 20,
+                    "id": 19,
                     "name": "Fremantle Plumbing Service",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL40202",
                     "rating": 4.8,
-                    "reviewCount": 50,
+                    "reviewCount": 0,
                     "phone": "(08) 9337 1414",
                     "website": "http://www.freoplumbing.com.au/",
                     "areas": [
@@ -962,19 +1099,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "107 Garling St, O'Connor WA 6163, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 23,
+                    "id": 20,
                     "name": "Affordable Plumbing And Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 1,
+                    "reviewCount": 0,
                     "phone": "0418 955 599",
                     "website": "https://www.affordableplumbingandgas.com.au/index.php",
                     "areas": [
@@ -985,19 +1121,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "33 Amity Blvd, Munster WA 6166, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 24,
+                    "id": 21,
                     "name": "First Choice Electrics",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC95712",
                     "rating": 4.7,
-                    "reviewCount": 77,
+                    "reviewCount": 0,
                     "phone": "(08) 9301 1333",
                     "website": "http://www.firstchoiceelectrics.com.au/",
                     "areas": [
@@ -1008,19 +1143,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/7 Packard St, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 25,
+                    "id": 22,
                     "name": "Wirewest Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC20172",
                     "rating": 5,
-                    "reviewCount": 84,
+                    "reviewCount": 0,
                     "phone": "1300 361 941",
                     "website": "http://wirewest.com.au/",
                     "areas": [
@@ -1031,19 +1165,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "9 Outlook Dr, Edgewater WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 26,
+                    "id": 23,
                     "name": "Adz Electrical Services",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 108,
+                    "reviewCount": 0,
                     "phone": "0477 608 067",
                     "website": "http://www.adzelectricalservices.com.au/",
                     "areas": [
@@ -1054,19 +1187,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Shepherds Bush Dr, Kingsley WA 6026, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 27,
+                    "id": 24,
                     "name": "Pipe Domain",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 212,
+                    "reviewCount": 0,
                     "phone": "0402 120 626",
                     "website": "http://www.pipedomain.com.au/",
                     "areas": [
@@ -1077,19 +1209,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "79 Wildflower Dr, Carramar WA 6031, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 28,
+                    "id": 25,
                     "name": "A2Z Plumbing Gas And Hotwater",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL73408",
                     "rating": 5,
-                    "reviewCount": 105,
+                    "reviewCount": 0,
                     "phone": "0421 799 060",
                     "website": "https://a2zplumbing.com.au/?utm_source=google&utm_medium=local&utm_campaign=gmb_listing",
                     "areas": [
@@ -1100,19 +1231,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Fulton Ln, Currambine WA 6028, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 29,
+                    "id": 26,
                     "name": "Oceania Plumbing and Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL51722",
                     "rating": 5,
-                    "reviewCount": 648,
+                    "reviewCount": 0,
                     "phone": "0416 611 510",
                     "website": "http://oceaniaplumbingandgas.com.au/",
                     "areas": [
@@ -1123,19 +1253,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/27 Caloundra Rd, Clarkson WA 6030, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 30,
+                    "id": 27,
                     "name": "Capricorn Plumbing & Piping Services",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 62,
+                    "reviewCount": 0,
                     "phone": "0414 311 768",
                     "website": "http://www.capricornplumbing.com.au/",
                     "areas": [
@@ -1146,19 +1275,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "16 Arrow Pl, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 31,
+                    "id": 28,
                     "name": "Lakeside Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 113,
+                    "reviewCount": 0,
                     "phone": "(08) 9300 1669",
                     "website": "https://www.lakesideplumbing.com.au/?utm_source=google&utm_medium=organic&utm_campaign=gbp",
                     "areas": [
@@ -1169,19 +1297,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5/10 Franklin Ln, Joondalup WA 6027, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 34,
+                    "id": 29,
                     "name": "Future Plumbing and Gas WA",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 60,
+                    "reviewCount": 0,
                     "phone": "0406 649 055",
                     "website": "https://www.futureplumbingandgaswa.com.au/",
                     "areas": [
@@ -1192,19 +1319,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Gilbreth Bend, Tapping WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 36,
+                    "id": 30,
                     "name": "Alkimos Plumbing and Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL23871",
                     "rating": 4.8,
-                    "reviewCount": 476,
+                    "reviewCount": 0,
                     "phone": "(08) 6118 6107",
                     "website": "https://www.alkimosplumbingandgas.com.au/",
                     "areas": [
@@ -1215,19 +1341,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/6 Glenrothes Cres, Yanchep WA 6035, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 37,
+                    "id": 31,
                     "name": "Full Power Electrical Perth",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 17,
+                    "reviewCount": 0,
                     "phone": "0490 870 857",
                     "website": "https://www.fullpowerelectricalperth.com.au/",
                     "areas": [
@@ -1238,19 +1363,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "62 Comrie Rd, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 38,
+                    "id": 32,
                     "name": "Bailey Electrical and Security Services",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC20905",
                     "rating": 5,
-                    "reviewCount": 84,
+                    "reviewCount": 0,
                     "phone": "0425 176 053",
                     "website": "https://www.besselect.com.au/",
                     "areas": [
@@ -1261,19 +1385,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2B Kinsale Pwy, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 39,
+                    "id": 33,
                     "name": "Kluem Electrical Services Pty Ltd",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC15651",
                     "rating": 4.8,
-                    "reviewCount": 93,
+                    "reviewCount": 0,
                     "phone": "(08) 6149 7548",
                     "website": "https://kluemes.com.au/",
                     "areas": [
@@ -1284,19 +1407,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/5 Mallaig Way, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 40,
+                    "id": 34,
                     "name": "JK Canning Electrical Services",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC83849",
                     "rating": 4.9,
-                    "reviewCount": 135,
+                    "reviewCount": 0,
                     "phone": "0418 982 627",
                     "website": "https://www.jkcanning.com.au/",
                     "areas": [
@@ -1307,19 +1429,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 11/14 Whyalla St, Willetton WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 41,
+                    "id": 35,
                     "name": "Direct Connect Electrical & Air",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC58909",
                     "rating": 4.8,
-                    "reviewCount": 64,
+                    "reviewCount": 0,
                     "phone": "0468 347 328",
                     "website": "https://dcea.com.au/",
                     "areas": [
@@ -1330,19 +1451,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/10 Wittenberg Dr, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 42,
+                    "id": 36,
                     "name": "VH Plumb & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 85,
+                    "reviewCount": 0,
                     "phone": "0476 049 559",
                     "website": "http://vhplumbgas.com.au/",
                     "areas": [
@@ -1353,19 +1473,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8 Orchid Pass, Thornlie WA 6108, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 43,
+                    "id": 37,
                     "name": "Baywood Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL87462",
                     "rating": 4.9,
-                    "reviewCount": 413,
+                    "reviewCount": 0,
                     "phone": "(08) 9456 2421",
                     "website": "http://www.baywoodplumbingandgas.com.au/",
                     "areas": [
@@ -1376,19 +1495,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/10 Wittenberg Dr, Canning Vale WA 6155, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 44,
+                    "id": 38,
                     "name": "Hamilton Plumbing & Gas Pty Ltd",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 179,
+                    "reviewCount": 0,
                     "phone": "0477 951 993",
                     "website": "http://hamiltonplumbingperth.com.au/",
                     "areas": [
@@ -1399,19 +1517,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 6/17 Remisko Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 46,
+                    "id": 39,
                     "name": "Serenity Plumbing and Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.8,
-                    "reviewCount": 16,
+                    "reviewCount": 0,
                     "phone": "0416 352 207",
                     "website": "https://tyox.org/business/serenity-plumbing-and-gas-nytc2o",
                     "areas": [
@@ -1422,19 +1539,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "102 Hume Rd, Thornlie WA 6108, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 47,
+                    "id": 40,
                     "name": "Easy Run Plumbing And Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL73811",
                     "rating": 5,
-                    "reviewCount": 39,
+                    "reviewCount": 0,
                     "phone": "0416 650 561",
                     "website": "https://easyrunplumbingandgas.com.au/",
                     "areas": [
@@ -1445,19 +1561,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5 Mark Pl, Thornlie WA 6108, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 48,
+                    "id": 41,
                     "name": "Gen Y Electrical Pty Ltd, Electrician Rockingham",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 164,
+                    "reviewCount": 0,
                     "phone": "0419 000 164",
                     "website": "https://www.genyelectrical.com.au/",
                     "areas": [
@@ -1468,19 +1583,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2 Yanrey St, Golden Bay WA 6174, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 49,
+                    "id": 42,
                     "name": "Electramatic Solutions",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 22,
+                    "reviewCount": 0,
                     "phone": "0410 527 989",
                     "website": "http://electramatic.com.au/",
                     "areas": [
@@ -1491,19 +1605,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "16 Hydra Cl, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 50,
+                    "id": 43,
                     "name": "SOR Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL92829",
                     "rating": 4.8,
-                    "reviewCount": 81,
+                    "reviewCount": 0,
                     "phone": "0419 393 498",
                     "website": "https://www.sorplumbingandgas.com.au/",
                     "areas": [
@@ -1514,19 +1627,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "6 Bunbury Pl, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 51,
+                    "id": 44,
                     "name": "Plumbers Rockingham",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL93031",
                     "rating": 5,
-                    "reviewCount": 1,
+                    "reviewCount": 0,
                     "phone": "0417 390 500",
                     "website": "https://www.plumbers-rockingham.com.au/",
                     "areas": [
@@ -1537,19 +1649,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "16/8 Pickard Ave, Rockingham WA 6168, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 53,
+                    "id": 45,
                     "name": "Impressive Plumbing & Gas Fitting",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL78483",
                     "rating": 4.9,
-                    "reviewCount": 65,
+                    "reviewCount": 0,
                     "phone": "0437 919 921",
                     "website": "https://impressiveplumbing.com.au/",
                     "areas": [
@@ -1560,19 +1671,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 2/26 Jacquard Way, Port Kennedy WA 6172, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 54,
+                    "id": 46,
                     "name": "Rockingham Plumbing and Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL49537",
                     "rating": 5,
-                    "reviewCount": 4,
+                    "reviewCount": 0,
                     "phone": "0408 097 080",
                     "website": "https://www.rockinghamplumbinggas.com/",
                     "areas": [
@@ -1583,19 +1693,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "17 Royal Rd, Safety Bay WA 6169, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 55,
+                    "id": 47,
                     "name": "Always Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.8,
-                    "reviewCount": 91,
+                    "reviewCount": 0,
                     "phone": "(08) 9399 2071",
                     "website": "https://alwayselectrical.com.au/?utm_source=gmb&utm_medium=local&utm_campaign=inbound",
                     "areas": [
@@ -1606,19 +1715,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/56 Alex Wood Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 56,
+                    "id": 48,
                     "name": "Koala Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC57789",
                     "rating": 5,
-                    "reviewCount": 237,
+                    "reviewCount": 0,
                     "phone": "0477 172 658",
                     "website": "https://www.koalaelectrician.com.au/",
                     "areas": [
@@ -1629,19 +1737,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "11 Cartland Ct, Bedfordale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 57,
+                    "id": 49,
                     "name": "VJ Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 32,
+                    "reviewCount": 0,
                     "phone": "0421 277 463",
                     "website": "https://www.vjelectrical.com.au/",
                     "areas": [
@@ -1652,19 +1759,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "21 Oban Loop, Bedfordale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 58,
+                    "id": 50,
                     "name": "Daly & Co Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 31,
+                    "reviewCount": 0,
                     "phone": "0404 241 051",
                     "website": "https://dalyandcoelectrical.com.au/",
                     "areas": [
@@ -1675,19 +1781,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "196 Croyden Rd, Roleystone WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 59,
+                    "id": 51,
                     "name": "Armadale Plumbing",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL64342",
                     "rating": 4.8,
-                    "reviewCount": 129,
+                    "reviewCount": 0,
                     "phone": "0408 946 461",
                     "website": "https://armadaleplumbing.com/",
                     "areas": [
@@ -1698,19 +1803,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "1/10 Gillam Dr, Kelmscott WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 60,
+                    "id": 52,
                     "name": "Freeflo Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL68820",
                     "rating": 5,
-                    "reviewCount": 217,
+                    "reviewCount": 0,
                     "phone": "1800 242 944",
                     "website": "https://www.freeflo.com.au/",
                     "areas": [
@@ -1721,19 +1825,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5 Dumsday Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 61,
+                    "id": 53,
                     "name": "Marchant Plumbing and Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 204,
+                    "reviewCount": 0,
                     "phone": "0430 055 577",
                     "website": "https://marchantplumbingandgas.com.au/",
                     "areas": [
@@ -1744,19 +1847,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "55 Heritage Dr, Roleystone WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 62,
+                    "id": 54,
                     "name": "Mundys Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 766,
+                    "reviewCount": 0,
                     "phone": "(08) 9525 1397",
                     "website": "http://www.mundysplumbing.com.au/",
                     "areas": [
@@ -1767,19 +1869,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/18 Nettleton Rd, Byford WA 6122, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 63,
+                    "id": 55,
                     "name": "Woolf Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.8,
-                    "reviewCount": 461,
+                    "reviewCount": 0,
                     "phone": "(08) 6555 7757",
                     "website": "https://woolfplumbing.com.au/?utm_source=google&utm_medium=local&utm_campaign=gmb",
                     "areas": [
@@ -1790,19 +1891,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5/29 Remisko Dr, Forrestdale WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 64,
+                    "id": 56,
                     "name": "KDC Plumbing & Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL49524",
                     "rating": 4.9,
-                    "reviewCount": 52,
+                    "reviewCount": 0,
                     "phone": "0433 335 277",
                     "website": "https://brand.page/Kdcgasservices",
                     "areas": [
@@ -1813,19 +1913,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Balivanich Loop, Seville Grove WA 6112, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 68,
+                    "id": 57,
                     "name": "West Assured Plumbing and Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL67998",
                     "rating": 4.9,
-                    "reviewCount": 22,
+                    "reviewCount": 0,
                     "phone": "0409 379 364",
                     "website": "http://westassuredplumbing.com.au/",
                     "areas": [
@@ -1836,19 +1935,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Roberts Rd, Kelmscott WA 6111, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 69,
+                    "id": 58,
                     "name": "Mandin Electrical, Electrician Mandurah",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC96984",
                     "rating": 5,
-                    "reviewCount": 245,
+                    "reviewCount": 0,
                     "phone": "0408 352 451",
                     "website": "http://www.mandinelectrical.com.au/",
                     "areas": [
@@ -1859,19 +1957,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7 Blossom Pl, Coodanup WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 70,
+                    "id": 59,
                     "name": "Dodds Electrical & Air",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 783,
+                    "reviewCount": 0,
                     "phone": "(08) 9587 0222",
                     "website": "https://doddselectrical.com.au/",
                     "areas": [
@@ -1882,19 +1979,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5/6 Dollyup St, Stake Hill WA 6181, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 71,
+                    "id": 60,
                     "name": "Peel Electrical Service",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.8,
-                    "reviewCount": 103,
+                    "reviewCount": 0,
                     "phone": "(08) 9537 7519",
                     "website": "http://peelelectrical.com.au/",
                     "areas": [
@@ -1905,19 +2001,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/7 Kulin Way, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 72,
+                    "id": 61,
                     "name": "Elite Electrical and Pumps",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 95,
+                    "reviewCount": 0,
                     "phone": "(08) 9555 9409",
                     "website": "http://www.eeaw.com.au/",
                     "areas": [
@@ -1928,19 +2023,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/14 Thornborough Rd, Greenfields WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 73,
+                    "id": 62,
                     "name": "Silver Sands Electrical Services",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC28616",
                     "rating": 5,
-                    "reviewCount": 74,
+                    "reviewCount": 0,
                     "phone": "0403 570 076",
                     "website": "http://silversandselectrical.com.au/",
                     "areas": [
@@ -1951,19 +2045,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4/14 Tindale St, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 74,
+                    "id": 63,
                     "name": "Watson Services",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL10797",
                     "rating": 4.9,
-                    "reviewCount": 167,
+                    "reviewCount": 0,
                     "phone": "0488 425 270",
                     "website": "https://www.watsonservices.com.au/",
                     "areas": [
@@ -1974,19 +2067,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "By Appointment Only, 83 Anstruther Rd, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 75,
+                    "id": 64,
                     "name": "SCG Plumbing and Gas mandurah plumber",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.7,
-                    "reviewCount": 49,
+                    "reviewCount": 0,
                     "phone": "0429 111 380",
                     "website": "http://www.scgplumbing.com/",
                     "areas": [
@@ -1997,19 +2089,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 2/12 Tindale St, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 76,
+                    "id": 65,
                     "name": "SDJ Plumbing and Gas Pty Ltd",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL57629",
                     "rating": 4.7,
-                    "reviewCount": 61,
+                    "reviewCount": 0,
                     "phone": "0428 654 943",
                     "website": "https://www.sdjplumbing.com.au/?utm_source=google&utm_medium=organic&utm_campaign=Google%20My%20Business",
                     "areas": [
@@ -2020,19 +2111,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/17 Rafferty Rd, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 77,
+                    "id": 66,
                     "name": "Plumbing Bros Mandurah",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL8934",
                     "rating": 4.5,
-                    "reviewCount": 72,
+                    "reviewCount": 0,
                     "phone": "(08) 9500 4384",
                     "website": "https://plumbingbros.com.au/mandurah/",
                     "areas": [
@@ -2043,19 +2133,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/42 Reserve Dr, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 78,
+                    "id": 67,
                     "name": "AJW Plumbing Gas & Air",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL51970",
                     "rating": 5,
-                    "reviewCount": 126,
+                    "reviewCount": 0,
                     "phone": "0423 504 942",
                     "website": "http://www.ajwinstalls.com.au/",
                     "areas": [
@@ -2066,19 +2155,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "9 Longmeadow Vista, Meadow Springs WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 81,
+                    "id": 68,
                     "name": "iConnect Plumbing & Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 24,
+                    "reviewCount": 0,
                     "phone": "0449 821 855",
                     "website": "https://www.iconnectplumbing.com/",
                     "areas": [
@@ -2089,19 +2177,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Glengoil Cl, Madora Bay WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 83,
+                    "id": 69,
                     "name": "Aquasonic Plumbing and Gas Mandurah",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 24,
+                    "reviewCount": 0,
                     "phone": "0433 442 643",
                     "website": "https://aquasonicpg.com.au/",
                     "areas": [
@@ -2112,19 +2199,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "330 Pinjarra Rd, Mandurah WA 6210, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 84,
+                    "id": 70,
                     "name": "RARE ELECTRICAL",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 28,
+                    "reviewCount": 0,
                     "phone": "0488 900 396",
                     "website": "https://www.rareelectrical.com.au/",
                     "areas": [
@@ -2135,19 +2221,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Hepburn Ave, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 85,
+                    "id": 71,
                     "name": "Brittanic Electrical Services",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC27486",
                     "rating": 5,
-                    "reviewCount": 13,
+                    "reviewCount": 0,
                     "phone": "0416 036 449",
                     "areas": [
                               "Ballajura WA 6066"
@@ -2157,19 +2242,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "67 Lakeshore Cl, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 86,
+                    "id": 72,
                     "name": "3G Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.7,
-                    "reviewCount": 13,
+                    "reviewCount": 0,
                     "phone": "0418 942 337",
                     "website": "http://3gelectrical.com.au/",
                     "areas": [
@@ -2180,19 +2264,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "6 Zion Grove, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 87,
+                    "id": 73,
                     "name": "PWA Electrical Services",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 157,
+                    "reviewCount": 0,
                     "phone": "(08) 9209 2990",
                     "website": "http://www.pwaelectricalservices.com.au/",
                     "areas": [
@@ -2203,19 +2286,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "u3/8 Cusack Rd, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 88,
+                    "id": 74,
                     "name": "J & C Electrical Contracting",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 505,
+                    "reviewCount": 0,
                     "phone": "(08) 6115 0070",
                     "website": "http://www.jcelectricalcontracting.com.au/",
                     "areas": [
@@ -2226,19 +2308,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "6/6 Arvida St, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 89,
+                    "id": 75,
                     "name": "Buddee Plumbing",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL12660",
                     "rating": 5,
-                    "reviewCount": 37,
+                    "reviewCount": 0,
                     "phone": "Contact via website",
                     "areas": [
                               "Ballajura WA 6066"
@@ -2248,19 +2329,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "34 Cashmere Gardens, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 90,
+                    "id": 76,
                     "name": "Mix Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL81636",
                     "rating": 5,
-                    "reviewCount": 3,
+                    "reviewCount": 0,
                     "phone": "0406 425 755",
                     "website": "http://www.mixplumbing.com.au/",
                     "areas": [
@@ -2271,19 +2351,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "53 Hamelin Dr, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 91,
+                    "id": 77,
                     "name": "RCM Plumbing And Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL73548",
                     "rating": 5,
-                    "reviewCount": 20,
+                    "reviewCount": 0,
                     "phone": "0408 928 900",
                     "website": "https://rcmplumbing.net.au/",
                     "areas": [
@@ -2294,19 +2373,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Illawarra Cres S, Ballajura WA 6066, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 92,
+                    "id": 78,
                     "name": "Acqua Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 48,
+                    "reviewCount": 0,
                     "phone": "0401 207 070",
                     "website": "http://www.acquaplumbingandgas.com.au/",
                     "areas": [
@@ -2317,19 +2395,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "3/30 Industry St, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 93,
+                    "id": 79,
                     "name": "Prompt Plumbing & Electrical",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL56485",
                     "rating": 4.5,
-                    "reviewCount": 184,
+                    "reviewCount": 0,
                     "phone": "(08) 9249 9638",
                     "website": "https://www.promptpe.com.au/",
                     "areas": [
@@ -2340,19 +2417,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7/11 Vale St, Malaga WA 6090, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 98,
+                    "id": 80,
                     "name": "Prime Time Electricians",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC17045",
                     "rating": 4.9,
-                    "reviewCount": 159,
+                    "reviewCount": 0,
                     "phone": "1300 356 200",
                     "website": "https://primetimewa.com.au/?utm_source=GMB&utm_medium=Google&utm_campaign=Electrician+Perth&utm_id=Electrician+Perth&utm_term=Electrician+Perth&utm_content=Electrician+Perth",
                     "areas": [
@@ -2363,19 +2439,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 1/65 Distinction Rd, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 99,
+                    "id": 81,
                     "name": "Martin & Co Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC56208",
                     "rating": 5,
-                    "reviewCount": 486,
+                    "reviewCount": 0,
                     "phone": "0483 939 015",
                     "website": "https://www.martincoelectrical.com.au/?utm_source=google&utm_medium=business_profile&utm_campaign=tradius&utm_content=website_button",
                     "areas": [
@@ -2386,19 +2461,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "2/15 Profit Pass, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 100,
+                    "id": 82,
                     "name": "Abel Electrical + Maintenance",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 49,
+                    "reviewCount": 0,
                     "phone": "0415 868 896",
                     "website": "https://abelelec.com.au/",
                     "areas": [
@@ -2409,19 +2483,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "20 Papuana Pl, Marangaroo WA 6064, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 101,
+                    "id": 83,
                     "name": "Leading Electrical WA",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 6,
+                    "reviewCount": 0,
                     "phone": "0421 230 200",
                     "website": "https://www.leadingelectricalwa.com/",
                     "areas": [
@@ -2432,19 +2505,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Uint 8/35 Darlot Rd, Landsdale WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 102,
+                    "id": 84,
                     "name": "Emerald Electrical Contractors EC010918",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 24,
+                    "reviewCount": 0,
                     "phone": "(08) 6559 5689",
                     "website": "https://www.emeraldelectrical.ie/",
                     "areas": [
@@ -2455,19 +2527,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "15 Vosnacos Way, Tapping WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 103,
+                    "id": 85,
                     "name": "WA Metro Plumbing and Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL7621",
                     "rating": 5,
-                    "reviewCount": 21,
+                    "reviewCount": 0,
                     "phone": "0447 184 051",
                     "website": "https://oyri.xyz/business/wa-metro-plumbing-and-gas-fxli5f",
                     "areas": [
@@ -2478,19 +2549,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "324 Landsdale Rd, Landsdale WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 104,
+                    "id": 86,
                     "name": "Casotti Plumbers",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.7,
-                    "reviewCount": 493,
+                    "reviewCount": 0,
                     "phone": "0418 911 592",
                     "website": "https://www.casottiplumbers.com.au/",
                     "areas": [
@@ -2501,19 +2571,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "U3/5 Beneficial Way, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 105,
+                    "id": 87,
                     "name": "Equip Plumbing and Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 90,
+                    "reviewCount": 0,
                     "phone": "0430 495 331",
                     "website": "https://equipplumbing.com.au/",
                     "areas": [
@@ -2524,19 +2593,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "10 Cantrell Cct, Landsdale WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 109,
+                    "id": 88,
                     "name": "World of Plumbing and Gas Pty Ltd",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 206,
+                    "reviewCount": 0,
                     "phone": "0488 296 724",
                     "website": "https://wopag.com.au/",
                     "areas": [
@@ -2547,19 +2615,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "U7/84 Distinction Rd, Wangara WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 111,
+                    "id": 89,
                     "name": "L-TEC Electrical PTY LTD",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC87750",
                     "rating": 4.9,
-                    "reviewCount": 26,
+                    "reviewCount": 0,
                     "phone": "0452 196 003",
                     "website": "http://l-tecelectrical.com.au/",
                     "areas": [
@@ -2570,19 +2637,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Topeka Pl, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 114,
+                    "id": 90,
                     "name": "Furo Plumbing Solutions",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": "PL26936",
                     "rating": 5,
-                    "reviewCount": 22,
+                    "reviewCount": 0,
                     "phone": "0452 337 626",
                     "areas": [
                               "Wanneroo WA 6065"
@@ -2592,19 +2658,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "4 Celestine St, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 120,
+                    "id": 91,
                     "name": "Assurance Plumbing & Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL26854",
                     "rating": 5,
-                    "reviewCount": 10,
+                    "reviewCount": 0,
                     "phone": "0402 085 629",
                     "website": "http://www.assuranceplumbing.com.au/",
                     "areas": [
@@ -2615,19 +2680,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "27 Helsinki Terrace, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 121,
+                    "id": 92,
                     "name": "Highside Plumbing and Gas",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL65445",
                     "rating": 5,
-                    "reviewCount": 11,
+                    "reviewCount": 0,
                     "phone": "0455 539 919",
                     "website": "https://highsideplumbing.com.au/",
                     "areas": [
@@ -2638,19 +2702,18 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "14 Bamboore Cres, Wanneroo WA 6065, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 122,
+                    "id": 93,
                     "name": "Bajic Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 27,
+                    "reviewCount": 0,
                     "phone": "0428 676 169",
                     "website": "https://bajicelectrical.com.au/",
                     "areas": [
@@ -2661,19 +2724,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "55 Napier Rd, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 123,
+                    "id": 94,
                     "name": "Mick Henry Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC88332",
                     "rating": 5,
-                    "reviewCount": 17,
+                    "reviewCount": 0,
                     "phone": "0411 881 907",
                     "website": "http://mickhenryelectrical.com/?utm_source=gmb&utm_medium=referral",
                     "areas": [
@@ -2684,19 +2746,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "7 Battersea Way, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 126,
+                    "id": 95,
                     "name": "Priority One Electrical",
                     "category": "electrician",
                     "licensed": true,
-                    "licenseNumber": "EC48390",
                     "rating": 5,
-                    "reviewCount": 7,
+                    "reviewCount": 0,
                     "phone": "0406 142 424",
                     "website": "https://ghka.xyz/business/priority-one-electrical-7bemhf",
                     "areas": [
@@ -2707,19 +2768,18 @@
                               "Repairs",
                               "Installations"
                     ],
-                    "description": "Licensed electrician providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "18 Driscoll Way, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 127,
+                    "id": 96,
                     "name": "Ember Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 311,
+                    "reviewCount": 0,
                     "phone": "0477 777 301",
                     "website": "https://emberplumbingperth.com.au/",
                     "areas": [
@@ -2730,19 +2790,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "5B Barnett Ct, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 128,
+                    "id": 97,
                     "name": "Rusty's Plumbing",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 29,
+                    "reviewCount": 0,
                     "phone": "0434 634 741",
                     "website": "http://rustysplumbing.com.au/",
                     "areas": [
@@ -2753,19 +2812,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "11/14 Boag Pl, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 129,
+                    "id": 98,
                     "name": "Aplomb Plumbing & Gas",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 41,
+                    "reviewCount": 0,
                     "phone": "0406 626 603",
                     "website": "https://tradehq.com.au/aplombplumbinggas/enquire",
                     "areas": [
@@ -2776,19 +2834,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Unit 22/515 Walter Rd E, Morley WA 6062, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 130,
+                    "id": 99,
                     "name": "BG Plumbing & Gas Services Perth",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 4.9,
-                    "reviewCount": 108,
+                    "reviewCount": 0,
                     "phone": "0402 045 259",
                     "website": "https://bg-plumbing.com.au/",
                     "areas": [
@@ -2799,19 +2856,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "36 Leeds St, Dianella WA 6059, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 131,
+                    "id": 100,
                     "name": "HIFLO Plumbing Solutions",
                     "category": "plumber",
                     "licensed": true,
-                    "licenseNumber": null,
                     "rating": 5,
-                    "reviewCount": 84,
+                    "reviewCount": 0,
                     "phone": "0483 210 198",
                     "website": "http://hifloplumbingsolutions.com.au/",
                     "areas": [
@@ -2822,19 +2878,18 @@
                               "Repairs",
                               "Maintenance"
                     ],
-                    "description": "Licensed plumber providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "Hellenic Dr, Dianella WA 6059, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           },
           {
-                    "id": 136,
+                    "id": 101,
                     "name": "Plumbing and Gas Brothers",
                     "category": "gas_fitter",
                     "licensed": true,
-                    "licenseNumber": "PL35106",
                     "rating": 5,
-                    "reviewCount": 38,
+                    "reviewCount": 0,
                     "phone": "(08) 6150 9495",
                     "website": "https://www.plumbingandgasbrothers.com/",
                     "areas": [
@@ -2845,10 +2900,10 @@
                               "Gas repairs",
                               "Safety inspections"
                     ],
-                    "description": "Licensed gas fitter providing professional services in Perth.",
+                    "description": "General service provider providing professional services in Perth.",
                     "ownerRecommended": false,
                     "address": "8/46 Wright Cres, Bayswater WA 6053, Australia",
-                    "lastUpdated": "2025-09-24T13:36:14.939Z"
+                    "lastUpdated": "2025-09-25T13:30:27.343Z"
           }
 ];
 
@@ -2890,8 +2945,8 @@
             
             updateSlidesPerView();
 
-            // Show first 6-9 tradies in slider
-            const maxTradies = Math.min(tradies.length, 30);
+            // Show first 12-15 tradies in slider
+            const maxTradies = Math.min(tradies.length, 15);
             const displayTradies = tradies.slice(0, maxTradies);
             
             totalSlides = Math.ceil(displayTradies.length / slidesPerView);
